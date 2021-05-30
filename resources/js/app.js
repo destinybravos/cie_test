@@ -16,17 +16,33 @@ Vue.use(PortalVue);
 // Font awesome integration
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faCheckCircle, faEnvelope, faTimesCircle, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faCircleNotch, faKey, faPhoneAlt, faSortNumericUpAlt, faTimes, faUserAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faBuilding, faCheckCircle, faEnvelope, faTimesCircle, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faBookReader, faChalkboardTeacher, faCircleNotch, faExternalLinkAlt, faInfoCircle, faKey, faLink, 
+    faMapPin, faPhoneAlt, faSortNumericUpAlt, faTimes, faUserAlt, faUsersCog, faUserPlus, faHome, faBars, 
+    faUserGraduate, faUniversity, faSchool, faUsers, faBook, faGraduationCap, faSatelliteDish, faBriefcase, faTools, faPlus, faSignInAlt, faTasks, faChevronDown, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
+import { faAccusoft, faFacebookF, faInstagram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faUser,faPhoneAlt, faEnvelope, faUserAlt, faSortNumericUpAlt, faUserPlus, faKey, faTimesCircle, faCheckCircle, faTimes, faCircleNotch);
+library.add(faUser,faPhoneAlt, faEnvelope, faUserAlt, faSortNumericUpAlt, faUserPlus, faKey, faTimesCircle, faCheckCircle, faTimes, 
+    faCircleNotch, faFacebookF, faTwitter, faInstagram, faWhatsapp, faLink, faExternalLinkAlt, faInfoCircle,
+    faAccusoft, faUsersCog, faChalkboardTeacher, faBookReader, faUserPlus, faMapPin, faHome, faBars, 
+    faUserGraduate,faUniversity, faSchool, faUsers, faBook, faGraduationCap, faSatelliteDish, faBriefcase,
+    faTools,faPlus, faSignInAlt, faTasks, faBuilding, faChevronDown, faMoneyBill);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;
 
+
+// Animate on Scroll
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 const app = document.getElementById('app');
 
 new Vue({
+    created () {
+        AOS.init()
+    },
     render: (h) =>
         h(InertiaApp, {
             props: {
