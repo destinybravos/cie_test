@@ -1,6 +1,6 @@
 <template>
     <div id="serv_descr" class="">
-        <div class="container max-w-6xl py-8 my-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="container max-w-6xl py-8 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <!-- Grid Colunm 3 -->
             <div class="py-3">
                 <div class="py-4 px-6 text-center md:text-right uppercase" data-aos="fade-up">

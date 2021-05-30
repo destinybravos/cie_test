@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 Route::get('/register', function () {
     return Inertia\Inertia::render('Register');
-});
+})->name('register');
+
+Route::get('/login', function () {
+    return Inertia\Inertia::render('Login');
+})->name('login');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');

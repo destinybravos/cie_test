@@ -5,7 +5,7 @@
         <slide v-for="(item, index) in slides" :key="index" :style="{'background-image': `url(${item.image})`}"
          style="background-repeat:no-repeat; background-position:right center; background-size:cover;">
             <div class="h-full w-full bg-black bg-opacity-50 flex items-center">
-                <div class="py-12 max-w-5xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div class="py-12 max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     <div class="lg:col-span-2 text-left" data-aos="fade-in">
                         <div class="">
                             <img src="/imgs/imoyes.png" alt="" class="inline-block h-16 mx-5">
