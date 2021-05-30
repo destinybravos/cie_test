@@ -91,12 +91,12 @@
                             <div v-if="showAccount" class="absolute z-10 shadow rounded dropdown top-0 left-0 right-auto bottom-auto w-44 bg-white text-left">
                                 <ul>
                                     <li class="border-b border-gray-200">
-                                        <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                                        <inertia-link :href="route('login')" class="py-3 px-3 lg:px-4 block md:inline-block">
                                             <font-awesome-icon :icon="['fas' , 'sign-in-alt']" /> User Login
                                         </inertia-link>
                                     </li>
                                     <li class="">
-                                        <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                                        <inertia-link :href="route('register')" class="py-3 px-3 lg:px-4 block md:inline-block">
                                             <font-awesome-icon :icon="['fas' , 'user-plus']" /> Register
                                         </inertia-link>
                                     </li>
