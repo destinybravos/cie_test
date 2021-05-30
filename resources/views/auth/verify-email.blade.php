@@ -1,8 +1,13 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
         </x-slot>
+
+        
+        <div class="mb-8 md:mb-5 text-center">
+            <img src="/imgs/imoyes.png"  class="h-12 inline-block" alt="">
+            <img src="/imgs/cielogo.png" class="h-12 inline-block"  alt="">
+        </div>
 
         <div class="mb-4 text-sm text-gray-600">
             {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
@@ -19,7 +24,7 @@
                 @csrf
 
                 <div>
-                    <x-jet-button type="submit">
+                    <x-jet-button type="submit"  style="background-color:#b91e1a;">
                         {{ __('Resend Verification Email') }}
                     </x-jet-button>
                 </div>
@@ -28,7 +33,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
-                <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
+                <button type="submit" class="underline text-sm text-green-600 hover:text-green-900">
                     {{ __('Logout') }}
                 </button>
             </form>
