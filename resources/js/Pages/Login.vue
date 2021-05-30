@@ -21,6 +21,7 @@
                         <input v-model="input" @keyUp="inputVal" :type="password" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Password"> 
                      </div>
                     <button class="focus:outline-none text-white uppercase shadow-2xl my-3 w-full py-2 text-center rounded-lg cursor-pointer" style="background-color:#b91e1a;">
+                        <font-awesome-icon icon="sign-in-alt" class="mr-2" />
                         login
                     </button>
                     <div class="text-left text-gray-500 text-sm">
