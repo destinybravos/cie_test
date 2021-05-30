@@ -3,7 +3,7 @@
         <template #banner>
             <home-banner></home-banner>
         </template>
-        <service-description></service-description>
+        <brief-about></brief-about>
         <extra-component></extra-component>
         <other-component></other-component>
     </web-layout>
@@ -13,12 +13,13 @@
 import NewsCards from '../Components/NewsCards.vue'
 import HomeBanner from './Included/HomeBanner'
 import WebLayout from '../Layouts/WebLayout.vue'
-import ServiceDescription from '../Components/ServiceDescription.vue'
+import BriefAbout from '../Components/BriefAbout.vue'
 import ExtraComponent from './Components/ExtraComponent.vue'
 import OtherComponent from './Components/OtherComponent.vue'
+
 export default {
     components: {
-        WebLayout, HomeBanner, NewsCards, ServiceDescription, ExtraComponent,
+        WebLayout, HomeBanner, NewsCards, BriefAbout, ExtraComponent,
         OtherComponent 
     }
 }
