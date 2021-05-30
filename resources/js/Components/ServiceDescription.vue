@@ -20,11 +20,11 @@
             <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-3 md:px-5">
                 <div class="py-1 mx-4 md:mx-0">
                     <div class="bg-white border rounded shadow-lg h-full p-4 grid grid-cols-6 gap-4" data-aos="zoom-in-up">
-                        <div class="text-right font-bold text-green-700">
+                        <div class="text-right font-bold text-green-600">
                             <font-awesome-icon icon="bullhorn" size="2x" class="mt-3" />
                         </div>
                         <div class="col-span-5">
-                            <h2 class="mb-3 font-bold text-green-700 text-2xl">Pitch to Hope</h2>
+                            <h2 class="mb-3 font-bold text-green-600 text-2xl">Pitch to Hope</h2>
                             <p class="text-sm">
                                 Imo State University offers limited need and merit based scholarship and financial aids. 
                             </p>
@@ -33,11 +33,11 @@
                 </div>
                 <div class="py-1 mx-4 md:mx-0">
                     <div class="bg-white border rounded shadow-lg h-full p-4 grid grid-cols-6 gap-4" data-aos="zoom-in-up">
-                        <div class="text-right font-bold text-green-700">
+                        <div class="text-right font-bold text-green-600">
                             <font-awesome-icon icon="tools" size="2x" class="mt-3" />
                         </div>
                         <div class="col-span-5">
-                            <h2 class="mb-3 font-bold text-green-700 text-2xl">Skillup Imo</h2>
+                            <h2 class="mb-3 font-bold text-green-600 text-2xl">Skillup Imo</h2>
                             <p class="text-sm">
                                 IMSU Campus Life is the official Imo State University, Owerri welfare and entertainment 
                             </p>
@@ -46,11 +46,11 @@
                 </div>
                 <div class="py-1 mx-4 md:mx-0">
                     <div class="bg-white border rounded shadow-lg h-full p-4 grid grid-cols-6 gap-4" data-aos="zoom-in-up">
-                        <div class="text-right font-bold text-green-700">
+                        <div class="text-right font-bold text-green-600">
                             <font-awesome-icon icon="store-alt" size="2x" class="mt-3" />
                         </div>
                         <div class="col-span-5">
-                            <h2 class="mb-3 font-bold text-green-700 text-2xl"> Startup Imo</h2>
+                            <h2 class="mb-3 font-bold text-green-600 text-2xl"> Startup Imo</h2>
                             <p class="text-sm">
                                 Request for your transcript. Login to view shipment progress. 
                             </p>
@@ -59,11 +59,11 @@
                 </div>
                 <div class="py-1 mx-4 md:mx-0">
                     <div class="bg-white border rounded shadow-lg h-full p-4 grid grid-cols-6 gap-4" data-aos="zoom-in-up">
-                        <div class="text-right font-bold text-green-700">
+                        <div class="text-right font-bold text-green-600">
                             <font-awesome-icon icon="seedling" size="2x" class="mt-3" />
                         </div>
                         <div class="col-span-5">
-                            <h2 class="mb-3 font-bold text-green-700 text-2xl">Imo Demo Day</h2>
+                            <h2 class="mb-3 font-bold text-green-600 text-2xl">Imo Demo Day</h2>
                             <p class="text-sm">
                                 Through research and innovation, IMSU aims to become a world-class ...  
                             </p>

@@ -1,55 +1,62 @@
 <template>
-    <div id="extra-componen" class="bg-green-800">
+    <div id="extra-component" class="bg-green-600">
         <div class="mx-auto max-w-6xl pt-5">
             <h1 class="text-3xl text-white font-bold">Featured Ventures</h1>
             <hr class="w-20 h-1 bg-white">
         </div>
         <div class="px-6 py-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-5 text-white" data-aos="zoom-in">
-            <div class="py-10 px-2 sm:text-center text-shadow imgScale" id="made-for-me" data-aos="zoom-in">
-                <h2 class="text-3xl font-bold mx-auto my-auto">
-                    Made for Me 
-                </h2>
+            <div class="relative sm:text-center text-shadow imgScale cursor-pointer" style="" id="made-for-me" data-aos="zoom-in">
+                <div class="py-16 absolute h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
+                    <h2 class="text-3xl font-bold mx-auto my-auto">
+                        Made for Me 
+                    </h2>
+                </div>
             </div>
-            <div class="py-10 px-2 sm:text-center text-shadow imgScale" id="tradefair" data-aos="zoom-in">
-                <h2 class="text-3xl font-bold mx-auto my-auto">
-                    Tradefair Today 
-                </h2>
+            <div class="relative sm:text-center text-shadow imgScale cursor-pointer" style="" id="tradefair" data-aos="zoom-in">
+                <div class="py-16 absolute h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
+                    <h2 class="text-3xl font-bold mx-auto my-auto">
+                        Tradefair Today 
+                    </h2>
+                </div>
             </div>
-            <div class="py-10 px-2 sm:text-center text-shadow imgScale" id="playing" data-aos="zoom-in">
-                <h2 class="text-3xl font-bold mx-auto my-auto">
-                    Playing & Learning
-                </h2>
+            <div class="relative sm:text-center text-shadow imgScale cursor-pointer" style="" id="playing" data-aos="zoom-in">
+                <div class="py-12 absolute h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
+                    <h2 class="text-3xl font-bold mx-auto my-auto">
+                        Playing & Learning
+                    </h2>
+                </div>
             </div>
-            <div class="py-10 px-2 sm:text-center text-shadow imgScale" id="farm" data-aos="zoom-in">
-                <h2 class="text-3xl font-bold mx-auto my-auto">
-                    Farm Better
-                </h2>
+            <div class="h-40 relative sm:text-center text-shadow imgScale cursor-pointer" style="" id="farm" data-aos="zoom-in">
+                <div class="py-12 absolute h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
+                    <h2 class="text-3xl font-bold mx-auto my-auto">
+                        Farm Better
+                    </h2>
+                </div>
             </div>
-            
         </div>
-         <div id="aHref">
-            <a id="aHre" href="" class="py-2 px-3 my-1 mt-1 bg-white rounded-lg w-28 text-center text-black-700 font-bold shadow hover:bg-green-600 hover:shadow-lg">More Ventures</a>
+         <div id="aHref" class="mb-12">
+            <a id="aHre" href="" class="py-2 px-3 my-1 mt-1 bg-white rounded-lg w-28 text-center text-black-700 font-bold shadow hover:text-white hover:bg-red-700 hover:shadow-lg">More Ventures</a>
         </div>
 
         <!-- Partiners and Collaborators -->
-        <div id="serv_descr" class="">
+        <div id="serv_desc" class="bg-gradient-to-b from-green-500 to-green-600">
             <div class="mx-auto max-w-6xl pt-5">
                 <h1 class="text-3xl text-white font-bold">Partners & Collaborators</h1>
                 <hr class="w-20 h-1 bg-white">
             </div>
             <div class="px-6 py-10 max-w-6xl mx-auto aligns-items-center grid grid-cols-1 lg:grid-cols-8 gap-3 text-white" data-aos="zoom-in">
                 <div class="imgDiv" data-aos="slide-up">
-                    <div class="w-28 h-28 bg-green-800 flex">
+                    <div class="w-28 h-28 flex">
                         <img src="/imgs/cielogo.png" alt="parcel" class="min-w-full">
                     </div>
                 </div>
                 <div class="imgDiv" data-aos="slide-up">
-                    <div class="w-28 h-28 bg-green-800 flex">
+                    <div class="w-28 h-28 flex">
                         <img src="/imgs/cielogo.png" alt="parcel" class="min-w-full">
                     </div>
                 </div>
                 <div class="imgDiv" data-aos="slide-up">
-                    <div class="w-28 h-28 bg-green-800 flex">
+                    <div class="w-28 h-28 flex">
                         <img src="/imgs/cielogo.png" alt="parcel" class="min-w-full">
                     </div>
                 </div>
@@ -129,9 +136,11 @@ export default {
 <style scoped>
     #extra-component{
         /* min-height: 150px; */
-        background-image: url('/imgs/slide_two.png');
-        background-position: center center;
-        /* background-attachment: fixed; */
+        background-image: url('/imgs/libbg.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
     }
     #playing{
         background-image: url('/imgs/news1.jpg');
@@ -163,10 +172,10 @@ export default {
     }
     #serv_descr{
         min-height: 200px;
-        background-image: url('/imgs/libbg.png');
+        /* background-image: url('/imgs/libbg.png');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat; */
     }
 </style>
