@@ -16,10 +16,10 @@ Vue.use(PortalVue);
 // Font awesome integration
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faBuilding, faCheckCircle, faEnvelope, faTimesCircle, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faBuilding, faCheckCircle, faEnvelope, faTimesCircle, faUser} from '@fortawesome/free-regular-svg-icons';
 import { faBookReader, faChalkboardTeacher, faCircleNotch, faExternalLinkAlt, faInfoCircle, faKey, faLink, 
     faMapPin, faPhoneAlt, faSortNumericUpAlt, faTimes, faUserAlt, faUsersCog, faUserPlus, faHome, faBars, 
-    faUserGraduate, faUniversity, faSchool, faUsers, faBook, faGraduationCap, faSatelliteDish, faBriefcase, faTools, faPlus, faSignInAlt, faTasks, faChevronDown, faMoneyBill, faLock, faEye, faEyeSlash, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+    faUserGraduate, faUniversity, faSchool, faUsers, faBook, faGraduationCap, faSatelliteDish, faBriefcase, faTools, faPlus, faSignInAlt, faTasks, faChevronDown, faMoneyBill, faLock, faEye, faEyeSlash, faArrowLeft, faBullhorn, faStoreAlt, faSeedling } from '@fortawesome/free-solid-svg-icons';
 import { faAccusoft, faFacebookF, faInstagram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 library.add(faUser,faPhoneAlt, faEnvelope, faUserAlt, faSortNumericUpAlt, faUserPlus, faKey, faTimesCircle, faCheckCircle, faTimes, 
@@ -27,7 +27,7 @@ library.add(faUser,faPhoneAlt, faEnvelope, faUserAlt, faSortNumericUpAlt, faUser
     faAccusoft, faUsersCog, faChalkboardTeacher, faBookReader, faUserPlus, faMapPin, faHome, faBars, 
     faUserGraduate,faUniversity, faSchool, faUsers, faBook, faGraduationCap, faSatelliteDish, faBriefcase,
     faTools,faPlus, faSignInAlt, faTasks, faBuilding, faChevronDown, faMoneyBill, faLock, faEye, faEyeSlash,
-    faArrowLeft);
+    faArrowLeft, faBullhorn,faStoreAlt,faSeedling);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;

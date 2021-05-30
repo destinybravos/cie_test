@@ -12,7 +12,7 @@
                         <p class="text-gray-700 text-base font-semibold my-3">
                             We leverage on technology to develop innovation and economically viable products and services for public and private organizations that solve important needs of Imo State and the world at large.
                         </p>
-                        <div class="py-2 px-3 my-1 bg-green-800 rounded-lg w-28 text-center text-white font-bold shadow hover:bg-green-600 hover:shadow-lg">
+                        <div class="py-2 px-3 my-1 bg-green-600 rounded-lg w-28 text-center text-white font-bold shadow hover:bg-green-600 hover:shadow-lg">
                             <a href="#">See more</a>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                         <p class="text-gray-700 text-base font-semibold my-3">
                             Imo State Innovative Park (ISIP) is specially designed to inspire the spirit of Innovation across all sectors of the economy of Imo State with the aim of making Imo State a model Innovative Society for the benefit of all citizen.
                         </p>
-                        <div class="py-2 px-3 my-1 bg-green-800 rounded-lg w-28 text-center text-white font-bold shadow hover:bg-green-600 hover:shadow-lg">
+                        <div class="py-2 px-3 my-1 bg-green-600 rounded-lg w-28 text-center text-white font-bold shadow hover:bg-green-600 hover:shadow-lg">
                             <a href="#">See more</a>
                         </div>
                     </div>
