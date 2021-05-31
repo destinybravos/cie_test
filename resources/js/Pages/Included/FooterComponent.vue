@@ -28,7 +28,7 @@
                 <div class="flex-shrink-0 flex items-center">
                     <div>
                         <inertia-link :href="route('home')">
-                            <img src="/imgs/imsu_logo.png" class="mb-8" style="max-width:100%; max-height:100px;" />
+                            <img src="/imgs/imoyes.png" class="mb-8" style="max-width:100%; max-height:100px;" />
                         </inertia-link>
                         <div class="text-sm">
                             <p class="my-4">
