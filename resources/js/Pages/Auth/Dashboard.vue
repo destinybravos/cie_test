@@ -36,7 +36,7 @@
 
                 <!-- Side Columns -->
                 <div>
-                    friends
+                    <side-profile-card />
                 </div>
             </div>
         </div>
@@ -46,11 +46,13 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     import StoryComponent from '../../Components/StoryComponent.vue'
+    import SideProfileCard from '../../Components/SideProfileCard.vue'
 
     export default {
         components: {
             AppLayout,
             StoryComponent,
+            SideProfileCard,
         },
     }
 </script>

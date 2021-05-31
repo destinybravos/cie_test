@@ -58,7 +58,7 @@
 
         <div id="main">
             <slot name="side"></slot>
-            <div class="max-w-6xl">
+            <div class="lg:max-w-7xl">
                 <slot></slot>
             </div>
         </div>

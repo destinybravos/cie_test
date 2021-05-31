@@ -16,7 +16,7 @@
                             {{ item.p }}
                         </p>
                         <div class="pt-5">
-                            <a href="#" class="bg-gradient-to-t from-red-700 to-red-500 px-8 py-2 rounded  uppercase font-semibold">
+                            <a href="/register" class="bg-gradient-to-t from-red-700 to-red-500 px-8 py-2 rounded  uppercase font-semibold">
                                 <font-awesome-icon :icon="['fas', 'sign-in-alt']" />  
                                 Join US
                             </a>
