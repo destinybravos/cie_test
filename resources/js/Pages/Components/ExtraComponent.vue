@@ -1,41 +1,66 @@
 <template>
-    <div id="extra-component" class="bg-green-800">
-        <div class="mx-auto max-w-6xl grid grid-cols-1 gap-2 text-white" data-aos="zoom-in">
-            <div class="lg:py-32 py-12 px-2 sm:text-center text-shadow" data-aos="zoom-in">
-                <h4 class="text-xl font-semibold my-2 uppercase">
-                    Imo State University
-                </h4>
-                <hr class="border-lg border-green-700 w-1/4">
+    <div id="extra-componen" class="bg-green-800">
+        <div class="mx-auto max-w-6xl pt-5">
+            <h1 class="text-3xl text-white font-bold">Featured Ventures</h1>
+            <hr class="w-20 h-1 bg-white">
+        </div>
+        <div class="px-6 py-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-5 text-white" data-aos="zoom-in">
+            <div class="py-10 px-2 sm:text-center text-shadow imgScale" id="made-for-me" data-aos="zoom-in">
+                <h2 class="text-3xl font-bold mx-auto my-auto">
+                    Made for Me 
+                </h2>
+            </div>
+            <div class="py-10 px-2 sm:text-center text-shadow imgScale" id="tradefair" data-aos="zoom-in">
+                <h2 class="text-3xl font-bold mx-auto my-auto">
+                    Tradefair Today 
+                </h2>
+            </div>
+            <div class="py-10 px-2 sm:text-center text-shadow imgScale" id="playing" data-aos="zoom-in">
+                <h2 class="text-3xl font-bold mx-auto my-auto">
+                    Playing & Learning
+                </h2>
+            </div>
+            <div class="py-10 px-2 sm:text-center text-shadow imgScale" id="farm" data-aos="zoom-in">
+                <h2 class="text-3xl font-bold mx-auto my-auto">
+                    Farm Better
+                </h2>
+            </div>
+            
+        </div>
+         <div id="aHref">
+            <a id="aHre" href="" class="py-2 px-3 my-1 mt-1 bg-white rounded-lg w-28 text-center text-black-700 font-bold shadow hover:bg-green-600 hover:shadow-lg">More Ventures</a>
+        </div>
 
-                <h1 class="text-3xl font-bold my-2">
-                    ERP Portal brings all your student activities Online. 
-                </h1>
+        <!-- Partiners and Collaborators -->
+        <div id="serv_descr" class="">
+            <div class="mx-auto max-w-6xl pt-5">
+                <h1 class="text-3xl text-white font-bold">Partners & Collaborators</h1>
+                <hr class="w-20 h-1 bg-white">
+            </div>
+            <div class="px-6 py-10 max-w-6xl mx-auto aligns-items-center grid grid-cols-1 lg:grid-cols-8 gap-3 text-white" data-aos="zoom-in">
+                <div class="imgDiv" data-aos="slide-up">
+                    <div class="w-28 h-28 bg-green-800 flex">
+                        <img src="/imgs/cielogo.png" alt="parcel" class="min-w-full">
+                    </div>
+                </div>
+                <div class="imgDiv" data-aos="slide-up">
+                    <div class="w-28 h-28 bg-green-800 flex">
+                        <img src="/imgs/cielogo.png" alt="parcel" class="min-w-full">
+                    </div>
+                </div>
+                <div class="imgDiv" data-aos="slide-up">
+                    <div class="w-28 h-28 bg-green-800 flex">
+                        <img src="/imgs/cielogo.png" alt="parcel" class="min-w-full">
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Card Segment -->
         <div class="w-full bg-gray-100">
-            <div class="py-12 px-6 max-w-6xl mx-auto" data-aos="fade-in">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                    <div class="lg:col-span-2 lg:text-right md:text-center text-left">
-                        <h2 class="text-green-800 text-3xl font-bold">
-                            Studying at Imo State University 
-                        </h2>
-                        <p class="text-gray-700 text-base font-semibold">
-                             Our primarily goals focuses on continuous provision of quality learning environment and producing highly intellectual graduates with reputable character.
-                        </p>
-                    </div>
-                    <div>
-                        <div class="bg-white shadow w-full py-3 px-6">
-                            <p>
-                                Interested in finding out more? Click on all on the button below to contact us.
-                            </p>
-                            <a :href="'#'" class="bg-green-800 py-1 px-4 mt-2 text-white inline-block" role="button">
-                                <font-awesome-icon :icon="['fas', 'phone-alt']" /> Contact Us
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="mx-auto max-w-6xl py-10">
+                <h1 class="text-3xl text-green-800 font-bold">News & Upcoming Events</h1>
+                <hr class="w-20 h-1 bg-green-800">
             </div>
             <div class="pb-12 px-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5">
                 <!-- Cards -->
@@ -103,8 +128,45 @@ export default {
 
 <style scoped>
     #extra-component{
-        min-height: 300px;
+        /* min-height: 150px; */
         background-image: url('/imgs/slide_two.png');
+        background-position: center center;
+        /* background-attachment: fixed; */
+    }
+    #playing{
+        background-image: url('/imgs/news1.jpg');
+        background-position: center center;
+        /* opacity: 3; */
+    }
+    #made-for-me{
+        background-image: url('/imgs/workers1.jpg');
+        background-position: center center;
+    }
+    #tradefair{
+        background-image: url('/imgs/trade.jpg');
+        background-position: center center;
+    }
+    #farm{
+        background-image: url('/imgs/farm.jpg');
+        background-position: center center;
+    }
+    #farm{
+        background-image: url('/imgs/farm.jpg');
+        background-position: center center;
+    }
+    .imgScale:hover{
+    transform: scale(1.1);
+    }
+    #aHref{
+        justify-content: center;
+        text-align: center;
+    }
+    #serv_descr{
+        min-height: 200px;
+        background-image: url('/imgs/libbg.png');
+        background-size: cover;
+        background-position: center;
         background-attachment: fixed;
+        background-repeat: no-repeat;
     }
 </style>
