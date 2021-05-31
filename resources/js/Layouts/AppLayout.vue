@@ -57,23 +57,33 @@
         </div>
 
         <div id="main">
-            <slot name="side"></slot>
-            <div class="lg:max-w-7xl">
-                <slot></slot>
-            </div>
+            <template v-if="verify_status > 0">
+                <slot name="side"></slot>
+                <div class="lg:max-w-7xl">
+                    <slot></slot>
+                </div>
+            </template>
+            <template v-else>
+                <div class="lg:max-w-7xl">
+                    <verification-component></verification-component>
+                </div>
+            </template>
         </div>
     </div>
 </template>
 
 <script>
+import VerificationComponent from '../Components/VerificationComponent.vue';
 export default {
+  components: { VerificationComponent },
     data(){
         return {
-
+            verify_status:0
         }
     },
-    mounted(){
-        console.log(this.$page.user);
+    beforeMount(){
+        this.verify_status = this.$page.user.verification_status
+        console.log(this.verify_status);
     }
 }
 </script>
