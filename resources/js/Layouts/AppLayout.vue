@@ -1,251 +1,85 @@
 <template>
-    <div class="min-h-screen bg-gray-100">
-        <nav class="bg-white border-b border-gray-100">
-            <!-- Primary Navigation Menu -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
-                    <div class="flex">
-                        <!-- Logo -->
-                        <div class="flex-shrink-0 flex items-center">
-                            <inertia-link :href="route('dashboard')">
-                                <jet-application-mark class="block h-9 w-auto" />
-                            </inertia-link>
-                        </div>
+    <div class="min-h-screen bg-gray-50">
+        <!-- Top HD -->
+        <div class="bg-green-800 text-sm z-30 sticky top-0 shadow">
+            <div class="max-w-7xl mx-auto flex">
+                <section class="py-2 px-3 md:px-1 flex-grow flex md:block">
+                    <a href="#" class="hidden md:inline-block">
+                        <img src="/imgs/imoyes.png" alt="" class="h-8 inline-block align-middle">
+                        <img src="/imgs/cielogo.png" alt="" class="h-8 inline-block align-middle">
+                    </a>
+                    
+                    <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 mx-1 px-1 rounded py-1 align-middle">
+                        <font-awesome-icon icon="home" class="text-white text-xl ml-4 inline-block align-middle cursor-pointer" />
+                    </inertia-link>
+                    <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 mx-1 px-1 rounded py-1 align-middle">
+                        <font-awesome-icon icon="plus-circle" class="text-white text-xl ml-4 inline-block align-middle" />
+                    </inertia-link>
+                </section>
+                
+                <section class="py-2 px-3 md:px-1 flex-grow hidden md:inline-block flex-initial md:flex-grow">
+                    
+                </section>
 
-                        <!-- Navigation Links -->
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                                Dashboard
-                            </jet-nav-link>
-                        </div>
-                    </div>
+                <section class="py-2 px-3 md:px-1 flex-grow flex md:block">
+                    <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 mx-1 px-1 rounded py-1 align-middle text-center">
+                        <font-awesome-icon icon="user-plus" class="text-white text-xl inline-block mx-auto cursor-pointer" />
+                    </inertia-link>
+                    <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 mx-1 px-1 rounded py-1 align-middle">
+                        <font-awesome-icon :icon="['far', 'comment-alt']" class="text-white text-xl inline-block mx-auto cursor-pointer" />
+                    </inertia-link>
+                    <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 mx-1 px-1 rounded py-1 align-middle">
+                        <font-awesome-icon :icon="['far', 'bell']" class="text-white text-xl inline-block mx-auto cursor-pointer" />
+                    </inertia-link>
+                    <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 ml-3 px-1 rounded py-1 align-middle">
+                        <img class="h-6 w-6 rounded-full object-cover inline-block align-top bg-white" :src="'/imgs/' + $page.user.profile_photo_path" :alt="$page.user.name" />
+                    </inertia-link>
+                </section>
+            </div>
+        </div>
 
-                    <!-- Settings Dropdown -->
-                    <div class="hidden sm:flex sm:items-center sm:ml-6">
-                        <div class="ml-3 relative">
-                            <jet-dropdown align="right" width="48">
-                                <template #trigger>
-                                    <button v-if="$page.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                                        <img class="h-8 w-8 rounded-full object-cover" :src="$page.user.profile_photo_url" :alt="$page.user.name" />
-                                    </button>
-
-                                    <button v-else class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                        <div>{{ $page.user.name }}</div>
-
-                                        <div class="ml-1">
-                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </template>
-
-                                <template #content>
-                                    <!-- Account Management -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
-                                        Manage Account
-                                    </div>
-
-                                    <jet-dropdown-link :href="route('profile.show')">
-                                        Profile
-                                    </jet-dropdown-link>
-
-                                    <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.jetstream.hasApiFeatures">
-                                        API Tokens
-                                    </jet-dropdown-link>
-
-                                    <div class="border-t border-gray-100"></div>
-
-                                    <!-- Team Management -->
-                                    <template v-if="$page.jetstream.hasTeamFeatures">
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Manage Team
-                                        </div>
-
-                                        <!-- Team Settings -->
-                                        <jet-dropdown-link :href="route('teams.show', $page.user.current_team)">
-                                            Team Settings
-                                        </jet-dropdown-link>
-
-                                        <jet-dropdown-link :href="route('teams.create')" v-if="$page.jetstream.canCreateTeams">
-                                            Create New Team
-                                        </jet-dropdown-link>
-
-                                        <div class="border-t border-gray-100"></div>
-
-                                        <!-- Team Switcher -->
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Switch Teams
-                                        </div>
-
-                                        <template v-for="team in $page.user.all_teams">
-                                            <form @submit.prevent="switchToTeam(team)" :key="team.id">
-                                                <jet-dropdown-link as="button">
-                                                    <div class="flex items-center">
-                                                        <svg v-if="team.id == $page.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                                        <div>{{ team.name }}</div>
-                                                    </div>
-                                                </jet-dropdown-link>
-                                            </form>
-                                        </template>
-
-                                        <div class="border-t border-gray-100"></div>
-                                    </template>
-
-                                    <!-- Authentication -->
-                                    <form @submit.prevent="logout">
-                                        <jet-dropdown-link as="button">
-                                            Logout
-                                        </jet-dropdown-link>
-                                    </form>
-                                </template>
-                            </jet-dropdown>
-                        </div>
-                    </div>
-
-                    <!-- Hamburger -->
-                    <div class="-mr-2 flex items-center sm:hidden">
-                        <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                <path :class="{'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                <path :class="{'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
+        <!-- side chat bar -->
+        <div id="sidebar" class="z-10 shadow bg-white hidden lg:block fixed right-0 top-0 h-screen" style="width:250px;">
+            <div class="mt-12 flex px-6 py-2">
+                <h2 class="text-xl inline-block flex-grow">
+                    Chats
+                </h2>
+                
+                <div class="flex-grow text-right text-sm">
+                    <inertia-link href="#" class="cursor-pointer ml-3 px-2 rounded-full bg-gray-200 py-1 align-middle">
+                        <font-awesome-icon :icon="['fas', 'user-friends']" class="text-gray-800 inline-block mx-auto cursor-pointer" />
+                    </inertia-link>
+                    <inertia-link href="#" class="cursor-pointer px-2 rounded-full bg-gray-200 py-1 align-middle">
+                        <font-awesome-icon :icon="['fas', 'cog']" class="text-gray-800 inline-block mx-auto cursor-pointer" />
+                    </inertia-link>
                 </div>
             </div>
+        </div>
 
-            <!-- Responsive Navigation Menu -->
-            <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
-                <div class="pt-2 pb-3 space-y-1">
-                    <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                        Dashboard
-                    </jet-responsive-nav-link>
-                </div>
-
-                <!-- Responsive Settings Options -->
-                <div class="pt-4 pb-1 border-t border-gray-200">
-                    <div class="flex items-center px-4">
-                        <div class="flex-shrink-0">
-                            <img class="h-10 w-10 rounded-full" :src="$page.user.profile_photo_url" :alt="$page.user.name" />
-                        </div>
-
-                        <div class="ml-3">
-                            <div class="font-medium text-base text-gray-800">{{ $page.user.name }}</div>
-                            <div class="font-medium text-sm text-gray-500">{{ $page.user.email }}</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 space-y-1">
-                        <jet-responsive-nav-link :href="route('profile.show')" :active="route().current('profile.show')">
-                            Profile
-                        </jet-responsive-nav-link>
-
-                        <jet-responsive-nav-link :href="route('api-tokens.index')" :active="route().current('api-tokens.index')" v-if="$page.jetstream.hasApiFeatures">
-                            API Tokens
-                        </jet-responsive-nav-link>
-
-                        <!-- Authentication -->
-                        <form method="POST" @submit.prevent="logout">
-                            <jet-responsive-nav-link as="button">
-                                Logout
-                            </jet-responsive-nav-link>
-                        </form>
-
-                        <!-- Team Management -->
-                        <template v-if="$page.jetstream.hasTeamFeatures">
-                            <div class="border-t border-gray-200"></div>
-
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                Manage Team
-                            </div>
-
-                            <!-- Team Settings -->
-                            <jet-responsive-nav-link :href="route('teams.show', $page.user.current_team)" :active="route().current('teams.show')">
-                                Team Settings
-                            </jet-responsive-nav-link>
-
-                            <jet-responsive-nav-link :href="route('teams.create')" :active="route().current('teams.create')">
-                                Create New Team
-                            </jet-responsive-nav-link>
-
-                            <div class="border-t border-gray-200"></div>
-
-                            <!-- Team Switcher -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                Switch Teams
-                            </div>
-
-                            <template v-for="team in $page.user.all_teams">
-                                <form @submit.prevent="switchToTeam(team)" :key="team.id">
-                                    <jet-responsive-nav-link as="button">
-                                        <div class="flex items-center">
-                                            <svg v-if="team.id == $page.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                            <div>{{ team.name }}</div>
-                                        </div>
-                                    </jet-responsive-nav-link>
-                                </form>
-                            </template>
-                        </template>
-                    </div>
-                </div>
+        <div id="main">
+            <slot name="side"></slot>
+            <div class="max-w-6xl">
+                <slot></slot>
             </div>
-        </nav>
-
-        <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <slot name="header"></slot>
-            </div>
-        </header>
-
-        <!-- Page Content -->
-        <main>
-            <slot></slot>
-        </main>
-
-        <!-- Modal Portal -->
-        <portal-target name="modal" multiple>
-        </portal-target>
+        </div>
     </div>
 </template>
 
 <script>
-    import JetApplicationMark from '@/Jetstream/ApplicationMark'
-    import JetDropdown from '@/Jetstream/Dropdown'
-    import JetDropdownLink from '@/Jetstream/DropdownLink'
-    import JetNavLink from '@/Jetstream/NavLink'
-    import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
+export default {
+    data(){
+        return {
 
-    export default {
-        components: {
-            JetApplicationMark,
-            JetDropdown,
-            JetDropdownLink,
-            JetNavLink,
-            JetResponsiveNavLink,
-        },
-
-        data() {
-            return {
-                showingNavigationDropdown: false,
-            }
-        },
-
-        methods: {
-            switchToTeam(team) {
-                this.$inertia.put(route('current-team.update'), {
-                    'team_id': team.id
-                }, {
-                    preserveState: false
-                })
-            },
-
-            logout() {
-                axios.post(route('logout').url()).then(response => {
-                    window.location = '/';
-                })
-            },
         }
+    },
+    mounted(){
+        console.log(this.$page.user);
     }
+}
 </script>
+
+<style scoped>
+    #main{
+        margin-right: 250px;
+    }
+</style>
