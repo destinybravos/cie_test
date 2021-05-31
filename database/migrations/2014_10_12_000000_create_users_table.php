@@ -33,6 +33,7 @@ class CreateUsersTable extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable()->default('default.png');
             $table->text('cover_photo')->nullable()->default('d-cover.jpg');
+            $table->boolean('verification_status')->default(false);
             $table->timestamps();
         });
     }

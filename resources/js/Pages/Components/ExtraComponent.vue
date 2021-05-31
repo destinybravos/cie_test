@@ -4,33 +4,49 @@
             <h1 class="text-3xl text-white font-bold">Featured Ventures</h1>
             <hr class="w-20 h-1 bg-white">
         </div>
-        <div class="px-6 py-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-white" data-aos="zoom-in">
-            <div id="made-for-me" class="cursor-pointer">
-                <div class="py-16 h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
-                    <h2 class="text-3xl text-center font-bold mx-auto my-auto">
-                        Made for Me 
-                    </h2>
+        <div class="autoplay md:px-28 my-8 overflow-hidden">
+            <div class="px-4">
+                <div class="bg-white rounded-lg cursor-pointer">
+                    <div class="h-40 rounded-t-lg" id="made-for-me"></div>
+                    <div class="px-2 py-5 pt-3 text-md">
+                        <div class="text-2xl font-extrabold">
+                            Made for Me 
+                        </div>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, vero.
+                    </div>
                 </div>
             </div>
-            <div id="tradefair" class="cursor-pointer">
-                <div class="py-16 h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
-                    <h2 class="text-3xl text-center font-bold mx-auto my-auto">
-                        Tradefair Today 
-                    </h2>
+            <div class="px-4">
+                <div class="bg-white rounded-lg cursor-pointer">
+                    <div class="h-40 rounded-t-lg" id="tradefair"></div>
+                    <div class="px-2 py-5 pt-3 text-md">
+                        <div class="text-2xl font-extrabold">
+                            Tradefair Today 
+                        </div>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, vero.
+                    </div>
                 </div>
             </div>
-            <div id="playing" class="cursor-pointer">
-                <div class="py-16 h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
-                    <h2 class="text-3xl text-center font-bold mx-auto my-auto">
-                        Playing & Learning
-                    </h2>
+            <div class="px-4">
+                <div class="bg-white rounded-lg cursor-pointer">
+                    <div class="h-40 rounded-t-lg"  id="playing"></div>
+                    <div class="px-2 py-5 pt-3 text-md">
+                        <div class="text-2xl font-extrabold">
+                            Playing & Learning
+                        </div>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, vero.
+                    </div>
                 </div>
             </div>
-            <div id="farm" class="cursor-pointer">
-                <div class="py-16 h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
-                    <h2 class="text-3xl text-center font-bold mx-auto my-auto">
-                        Farm Better
-                    </h2>
+            <div class="px-4">
+                <div class="bg-white rounded-lg cursor-pointer">
+                    <div class="h-40 rounded-t-lg" id="farm"></div>
+                    <div class="px-2 py-5 pt-3 text-md">
+                        <div class="text-2xl font-extrabold">
+                            Farm Better
+                        </div>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, vero.
+                    </div>
                 </div>
             </div>
         </div>
@@ -126,6 +142,47 @@
 
 <script>
 import ProgressBar from './ProgressBar.vue'
+import $ from 'jquery';
+import 'slick-carousel/slick/slick';
+
+$(document).ready(function(){
+    $('.autoplay').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 15000,
+    responsive: [
+    {
+      breakpoint: 1068,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 1300,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 370,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+    });
+});
+
 export default {
     components:{
         ProgressBar
