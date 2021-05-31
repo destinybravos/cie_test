@@ -39,7 +39,7 @@
         </div>
 
         <!-- side chat bar -->
-        <div id="sidebar" class="z-10 shadow bg-white hidden lg:block fixed right-0 top-0 h-screen" style="width:250px;">
+        <div id="sidebar" class="z-10 shadow bg-white hidden xl:block fixed right-0 top-0 h-screen w-80">
             <div class="mt-12 flex px-6 py-2">
                 <h2 class="text-xl inline-block flex-grow">
                     Chats
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div id="main">
+        <div id="main" class="px-5 sm:px-0">
             <slot name="side"></slot>
             <div class="lg:max-w-7xl">
                 <slot></slot>
@@ -79,7 +79,5 @@ export default {
 </script>
 
 <style scoped>
-    #main{
-        margin-right: 250px;
-    }
+    
 </style>
