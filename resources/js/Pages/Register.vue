@@ -13,7 +13,7 @@
                         </div>
                         <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
                             <font-awesome-icon :icon="['far', 'user']" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
-                            <input v-model="fname" required type="text" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Firstname">
+                            <input v-model="uname" required type="text" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Username">
                         </div>
                         <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
                             <font-awesome-icon :icon="['far', 'envelope']" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
@@ -88,7 +88,7 @@ export default {
             processing:false,
             modal_type:'',
             modal_message:'',
-            fname:'',
+            uname:'',
             pass:'',
             phone:'',
             email:'',
@@ -115,7 +115,7 @@ export default {
         RegisterUser(){
             this.processing = true;
             let user = {
-                firstname: this.fname,
+                username: this.uname,
                 password: this.pass,
                 phone: this.phone,
                 email: this.email,

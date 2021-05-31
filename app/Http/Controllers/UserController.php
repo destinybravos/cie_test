@@ -13,14 +13,15 @@ class UserController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'firstname' => ['required'],
-            'email' => ['required', 'email'],
+            'username' => ['required', 'string'],
+            'email' => ['required', 'string', 'email', 'unique:users'],
+            'phone' => ['required', 'string', 'unique:users'],
             'password' => ['required', 'min:6']
         ]);
 
         if(
         User::create([
-            'firstname' => $request->firstname,
+            'username' => $request->username,
             'phone' => $request->phone,
             'email' => $request->email,
             'password' => Hash::make($request->password)

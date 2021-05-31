@@ -15,8 +15,9 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
+            $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
+            $table->string('username');
             $table->string('email')->unique();
             $table->string('phone')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -31,6 +32,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable()->default('default.png');
+            $table->text('cover_photo')->nullable()->default('d-cover.jpg');
             $table->timestamps();
         });
     }
