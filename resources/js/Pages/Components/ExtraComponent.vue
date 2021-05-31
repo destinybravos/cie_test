@@ -4,31 +4,31 @@
             <h1 class="text-3xl text-white font-bold">Featured Ventures</h1>
             <hr class="w-20 h-1 bg-white">
         </div>
-        <div class="px-6 py-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-5 text-white" data-aos="zoom-in">
-            <div class="relative sm:text-center text-shadow imgScale cursor-pointer" style="" id="made-for-me" data-aos="zoom-in">
-                <div class="py-16 absolute h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
-                    <h2 class="text-3xl font-bold mx-auto my-auto">
+        <div class="px-6 py-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-white" data-aos="zoom-in">
+            <div id="made-for-me" class="cursor-pointer">
+                <div class="py-16 h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
+                    <h2 class="text-3xl text-center font-bold mx-auto my-auto">
                         Made for Me 
                     </h2>
                 </div>
             </div>
-            <div class="relative sm:text-center text-shadow imgScale cursor-pointer" style="" id="tradefair" data-aos="zoom-in">
-                <div class="py-16 absolute h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
-                    <h2 class="text-3xl font-bold mx-auto my-auto">
+            <div id="tradefair" class="cursor-pointer">
+                <div class="py-16 h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
+                    <h2 class="text-3xl text-center font-bold mx-auto my-auto">
                         Tradefair Today 
                     </h2>
                 </div>
             </div>
-            <div class="relative sm:text-center text-shadow imgScale cursor-pointer" style="" id="playing" data-aos="zoom-in">
-                <div class="py-12 absolute h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
-                    <h2 class="text-3xl font-bold mx-auto my-auto">
+            <div id="playing" class="cursor-pointer">
+                <div class="py-16 h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
+                    <h2 class="text-3xl text-center font-bold mx-auto my-auto">
                         Playing & Learning
                     </h2>
                 </div>
             </div>
-            <div class="h-40 relative sm:text-center text-shadow imgScale cursor-pointer" style="" id="farm" data-aos="zoom-in">
-                <div class="py-12 absolute h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
-                    <h2 class="text-3xl font-bold mx-auto my-auto">
+            <div id="farm" class="cursor-pointer">
+                <div class="py-16 h-full w-full opacity-0 hover:opacity-100 transition-all delay-100" style="background-color:rgba(0,0,0,0.4)">
+                    <h2 class="text-3xl text-center font-bold mx-auto my-auto">
                         Farm Better
                     </h2>
                 </div>
