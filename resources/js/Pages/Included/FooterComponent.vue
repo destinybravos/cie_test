@@ -28,13 +28,11 @@
                 <div class="flex-shrink-0 flex items-center">
                     <div>
                         <inertia-link :href="route('home')">
-                            <img src="/imgs/imsu_logo.png" class="mb-8" style="max-width:100%; max-height:100px;" />
+                            <img src="/imgs/imoyes.png" class="mb-8" style="max-width:100%; max-height:100px;" />
                         </inertia-link>
                         <div class="text-sm">
                             <p class="my-4">
-                                Our primarily goals focuses on continuous provision of quality learning 
-                                environment and producing highly intellectual graduates with reputable 
-                                character
+                                IMOYES is specially designed to inspire the spirit of Innovation across all sectors of the economy of Imo State with the aim of making Imo State a model Innovative Society for the benefit of all citizen. 
                             </p>
                         </div>
                         <div>
@@ -72,31 +70,31 @@
                     <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
                             <font-awesome-icon icon="link" class="mr-1"/>
-                            2017/2018 Pre-Degree Application
+                            Our Community
                         </inertia-link>
                     </li>
                     <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
                             <font-awesome-icon icon="external-link-alt" class="mr-1"/>
-                            2017/2018 Pre-Degree Application Invoice
+                            Imo State Innovation Park (ISIP)
                         </inertia-link>
                     </li>
                     <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
                             <font-awesome-icon icon="link" class="mr-1"/>
-                            2016/2017 ICEP Invoice Generation
+                            Featured Ventures
                         </inertia-link>
                     </li>
                     <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
                             <font-awesome-icon icon="external-link-alt" class="mr-1"/>
-                            2016/2017 ICEP Login
+                            News & Upcoming Events
                         </inertia-link>
                     </li>
                     <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
-                            <font-awesome-icon icon="link" class="mr-1"/>
-                            2020 JUPEB Result
+                            <font-awesome-icon :icon="['fas' , 'briefcase']" class="mr-1"/>
+                            Find a Career
                         </inertia-link>
                     </li>
                 </ul>
@@ -104,7 +102,7 @@
             <!-- Third Column -->
             <div class="col-span-1 py-2 px-4" data-aos="zoom-in-up">
                 <h3 class="font-bold mb-3 py-2 px-4 rounded-tr-lg rounded-bl-lg border bg-green-600 bg-opacity-50 text-gray-100">
-                    Quic Links
+                    Quick Links
                 </h3>
 
                 <ul class="py-2 px-4 text-sm" id="quick_list">
@@ -116,40 +114,40 @@
                     </li>
                     <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
-                            <font-awesome-icon :icon="['fab', 'accusoft']" class="mr-1"/>
-                            Academics
+                            <font-awesome-icon :icon="['fas', 'tasks']" class="mr-1"/>
+                            Programmes
                         </inertia-link>
                     </li>
                     <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
-                            <font-awesome-icon icon="users-cog" class="mr-1"/>
-                            Administrations
+                            <font-awesome-icon :icon="['fas' , 'map-pin']" class="mr-1"/>
+                            Locations
                         </inertia-link>
                     </li>
                     <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
-                            <font-awesome-icon icon="chalkboard-teacher" class="mr-1"/>
-                            E-learning
+                            <font-awesome-icon :icon="['fas' , 'phone-alt']" class="mr-1"/>
+                            Contact us
                         </inertia-link>
                     </li>
                     <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
-                            <font-awesome-icon icon="book-reader" class="mr-1"/>
-                            E-library
+                            <font-awesome-icon :icon="['fas' , 'sign-in-alt']" class="mr-1"/>
+                            User Login
                         </inertia-link>
                     </li>
                     <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
-                            <font-awesome-icon icon="map-pin" class="mr-1"/>
-                            Centers
+                            <font-awesome-icon :icon="['fas' , 'user-plus']" class="mr-1"/>
+                            Register
                         </inertia-link>
                     </li>
-                    <li class="mb-2">
+                    <!-- <li class="mb-2">
                         <inertia-link :href="'#'" class="quick-link my-2">
                             <font-awesome-icon icon="user-plus" class="mr-1"/>
                             Admissions
                         </inertia-link>
-                    </li>
+                    </li> -->
                 </ul>
             </div>         
 
@@ -216,7 +214,7 @@
         </div>
         <hr class="border-gray-400 mt-6">
         <div class="text-center bg-gray-900 text-gray-300 p-4" data-aos="zoom-in">
-            Copyright &copy; Imo State University, {{ year.getFullYear() }}. All Rights Reserved
+            Copyright &copy; Imo Youth Empowerment Scheme, {{ year.getFullYear() }}. All Rights Reserved
         </div>
     </div>
 </template>
