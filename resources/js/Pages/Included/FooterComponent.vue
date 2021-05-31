@@ -4,31 +4,25 @@
             <div id="newl">
             </div>
             <div class="lg:col-span-2 bg-green-500 bg-opacity-75 py-6 px-4 md:py-20 md:px-12" data-aos="zoom-in-up">
-                <h1 class="text-2xl lg:text-5xl font-black">
-                    Subscribe to our Mailing List
+                <h1 class="text-2xl lg:text-3xl font-black">
+                    Let's be a part of Innovations for Employment and Economic Development in Nigeria
                 </h1>
-                <p class="text-lg font-semibold">
-                    Receive exclusive & first-hand updates about important events from IMSU.
-                </p>
-                <form @submit.prevent="''" class="block my-4">
-                    <input type="email" required placeholder="Enter your email address" 
-                        class="form-input rounded shadow-sm block w-full focus:text-gray-700 text-green-600 lg:w-3/4 md:h-14">
-                    
-                    <button class="bg-blue-900 hover:bg-blue-800 py-2 px-5 rounded mt-2">
-                        SUBSCRIBE
-                    </button>
-                </form>
+                <a href="/register" class="bg-gradient-to-b from-red-800 to-red-600 py-2 px-5 mt-4 inline-block fot-bold rounded">
+                    JOIN A PROGRAM
+                </a>
             </div>
         </div>
 
         <div class="container mx-auto grid grid-cols-1 mt-8 md:grid-cols-2 lg:grid-cols-4">
             <!-- First Column -->
-            <div class="col-span-1 py-2 px-4 lg:col-span-1" data-aos="zoom-in-up">
+            <div class="col-span-1 py-2 px-4 lg:col-span-1">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <div>
                         <inertia-link :href="route('home')">
-                            <img src="/imgs/imoyes.png" class="mb-8" style="max-width:100%; max-height:100px;" />
+                            <img src="/imgs/govlogo.png" alt="" class="inline-block h-10 mx-2">
+                            <img src="/imgs/imoyes.png" alt="" class="inline-block h-10 mx-2">
+                            <img src="/imgs/cielogo.png" alt="" class="inline-block h-10 mx-2">
                         </inertia-link>
                         <div class="text-sm">
                             <p class="my-4">
@@ -61,7 +55,7 @@
                 </div>
             </div>
             <!-- Second Column -->
-            <div class="col-span-1 py-2 px-4" data-aos="zoom-in-up">
+            <div class="col-span-1 py-2 px-4">
                 <h3 class="font-bold mb-3 py-2 px-4 rounded-tr-lg rounded-bl-lg border bg-white bg-opacity-25 text-gray-100">
                     Featured Links
                 </h3>
@@ -100,7 +94,7 @@
                 </ul>
             </div>
             <!-- Third Column -->
-            <div class="col-span-1 py-2 px-4" data-aos="zoom-in-up">
+            <div class="col-span-1 py-2 px-4">
                 <h3 class="font-bold mb-3 py-2 px-4 rounded-tr-lg rounded-bl-lg border bg-green-600 bg-opacity-50 text-gray-100">
                     Quick Links
                 </h3>
@@ -152,7 +146,7 @@
             </div>         
 
             <!-- Fouth Column -->
-            <div class="col-span-1 py-2 px-4" data-aos="zoom-in-up">
+            <div class="col-span-1 py-2 px-4">
                 <h3 class="font-bold">
                     Latest News
                 </h3>
@@ -213,7 +207,7 @@
             </div>
         </div>
         <hr class="border-gray-400 mt-6">
-        <div class="text-center bg-gray-900 text-gray-300 p-4" data-aos="zoom-in">
+        <div class="text-center bg-gray-900 text-gray-300 p-4">
             Copyright &copy; Imo Youth Empowerment Scheme, {{ year.getFullYear() }}. All Rights Reserved
         </div>
     </div>

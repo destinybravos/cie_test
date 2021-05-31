@@ -4,8 +4,8 @@
             <h1 class="text-3xl text-white font-bold">Featured Ventures</h1>
             <hr class="w-20 h-1 bg-white">
         </div>
-        <div class="autoplay md:px-28 my-8 overflow-hidden">
-            <div class="px-4">
+        <div class="md:px-28 my-8 grid grid-cols-4 gap-5">
+            <div class="">
                 <div class="bg-white rounded-lg cursor-pointer">
                     <div class="h-40 rounded-t-lg" id="made-for-me"></div>
                     <div class="px-2 py-5 pt-3 text-md">
@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-4">
+            <div class="">
                 <div class="bg-white rounded-lg cursor-pointer">
                     <div class="h-40 rounded-t-lg" id="tradefair"></div>
                     <div class="px-2 py-5 pt-3 text-md">
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-4">
+            <div class="">
                 <div class="bg-white rounded-lg cursor-pointer">
                     <div class="h-40 rounded-t-lg"  id="playing"></div>
                     <div class="px-2 py-5 pt-3 text-md">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-4">
+            <div class="">
                 <div class="bg-white rounded-lg cursor-pointer">
                     <div class="h-40 rounded-t-lg" id="farm"></div>
                     <div class="px-2 py-5 pt-3 text-md">
@@ -60,22 +60,10 @@
                 <h1 class="text-3xl text-white font-bold">Partners & Collaborators</h1>
                 <hr class="w-20 h-1 bg-white">
             </div>
-            <div class="px-6 py-10 max-w-6xl mx-auto aligns-items-center grid grid-cols-1 lg:grid-cols-8 gap-3 text-white" data-aos="zoom-in">
-                <div class="imgDiv" data-aos="slide-up">
-                    <div class="w-28 h-28 flex">
-                        <img src="/imgs/cielogo.png" alt="parcel" class="min-w-full">
-                    </div>
-                </div>
-                <div class="imgDiv" data-aos="slide-up">
-                    <div class="w-28 h-28 flex">
-                        <img src="/imgs/cielogo.png" alt="parcel" class="min-w-full">
-                    </div>
-                </div>
-                <div class="imgDiv" data-aos="slide-up">
-                    <div class="w-28 h-28 flex">
-                        <img src="/imgs/cielogo.png" alt="parcel" class="min-w-full">
-                    </div>
-                </div>
+            <div class="px-6 py-10 max-w-6xl mx-auto text-white" data-aos="zoom-in">
+                    <img src="/imgs/govlogo.png" alt=" " class="h-14 inline-block mx-2">
+                    <img src="/imgs/imoyes.png" alt=" " class="h-14 inline-block mx-2">
+                    <img src="/imgs/cielogo.png" alt=" " class="h-14 inline-block mx-2">
             </div>
         </div>
 
@@ -142,47 +130,6 @@
 
 <script>
 import ProgressBar from './ProgressBar.vue'
-import $ from 'jquery';
-import 'slick-carousel/slick/slick';
-
-$(document).ready(function(){
-    $('.autoplay').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 15000,
-    responsive: [
-    {
-      breakpoint: 1068,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 2
-      }
-    },
-    {
-      breakpoint: 1300,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 370,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1
-      }
-    }
-  ]
-    });
-});
-
 export default {
     components:{
         ProgressBar
