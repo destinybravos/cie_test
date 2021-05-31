@@ -4,9 +4,9 @@ class HttpClient{
     constructor() {
         // const   domain = process.env.MIX_API_DOMAIN, 
         //         protocol = process.env.MIX_API_PROTOCOL, 
-        // const   domain = 'cietest.com/api',
-        const   domain = 'demo.coingust.com/api',
-                protocol = 'https',
+        const   domain = 'cietest.com/api',
+        // const   domain = 'demo.coingust.com/api',
+                protocol = 'http',
                 appUri = `${protocol}://${domain}`;
 
         this.client = axios.create({
