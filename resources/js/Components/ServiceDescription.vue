@@ -1,19 +1,28 @@
 <template>
     <div id="serv_descr" class="">
-        <div class="container max-w-6xl py-4  mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4">
-            <div class="">
+        <div class="mx-auto max-w-6xl pt-5">
+            <h1 class="text-3xl text-green-600 font-bold">Featured Programms</h1>
+            <hr class="w-20 h-1 bg-green-600">
+        </div>
+        <div class="container max-w-6xl py-4 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-0">
+            <div class="bg-white my-2 rounded-lg shadow-lg">
                 <div class="py-3">
-                    <div class="py-4 text-center lg:text-right uppercase" data-aos="fade-up">
+                    <div class="py-4 text-center uppercase" data-aos="fade-up">
                         <div class="inline-flex gap-3 md:right-0 md:mt-5">
                             <img src="/imgs/imoyes.png" alt="" class="h-12">
                             <img src="/imgs/cielogo.png" alt="" class="h-12">
                         </div>
-                        <h2 class="font-bold text-2xl uppercase">
-                            Imo youth empowerment scheme
-                        </h2>
-                        <a href="#" class="lg:inline-block mt-8 font-weight-bolder transition-all delay-100 bg-gradient-to-t from-red-800 to-red-600 hidden py-2 rounded-lg text-white px-8 center">
-                            View more
-                        </a>
+                        <div class="px-6">
+                            <h2 class="font-bold text-2xl mt-2 uppercase">
+                                Imo youth empowerment scheme
+                            </h2>
+                            <p class="text-sm capitalize my-3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, quibusdam.
+                            </p>
+                            <div class="mt-8">
+                                <a href="#" class="font-weight-bolder bg-gradient-to-t from-red-800 to-red-600 py-2 rounded-lg text-white px-6 center w-full">join programm</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -28,6 +37,9 @@
                             <p class="text-sm">
                                 Imo State University offers limited need and merit based scholarship and financial aids. 
                             </p>
+                            <div class="pt-4 pb-2 uppercase">
+                                <a href="#" class="font-weight-bolder bg-gradient-to-t from-red-800 to-red-600 py-2 rounded-lg text-white px-6 center w-full">participate</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -41,6 +53,9 @@
                             <p class="text-sm">
                                 IMSU Campus Life is the official Imo State University, Owerri welfare and entertainment 
                             </p>
+                            <div class="pt-4 pb-2 uppercase">
+                                <a href="#" class="font-weight-bolder bg-gradient-to-t from-red-800 to-red-600 py-2 rounded-lg text-white px-6 center w-full">sign up</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -54,6 +69,9 @@
                             <p class="text-sm">
                                 Request for your transcript. Login to view shipment progress. 
                             </p>
+                            <div class="pt-4 pb-2 uppercase">
+                                <a href="#" class="font-weight-bolder bg-gradient-to-t from-red-800 to-red-600 py-2 rounded-lg text-white px-6 center w-full">register</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -67,28 +85,14 @@
                             <p class="text-sm">
                                 Through research and innovation, IMSU aims to become a world-class ...  
                             </p>
+                            <div class="pt-4 pb-2 uppercase">
+                                <a href="#" class="font-weight-bolder bg-gradient-to-t from-red-800 to-red-600 py-2 rounded-lg text-white px-6 center w-full">join</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="flex pb-5 lg:hidden justify-center">
-            <a href="#" class="font-weight-bolder bg-gradient-to-t from-red-800 to-red-600 inline-block py-2 rounded-lg text-white px-8 center">
-                View more
-            </a> 
-        </div>
-
-        <!-- Slick Example -->
-        <!-- <div class="my-5">
-            <div class="autoplay">
-                <div>your content</div>
-                <div>your content</div>
-                <div>your content</div>
-                <div>your content</div>
-                <div>your content</div>
-                <div>your content</div>
-            </div>
-        </div> -->
     </div>
 </template>
 
