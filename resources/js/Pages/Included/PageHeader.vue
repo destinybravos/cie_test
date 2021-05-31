@@ -29,28 +29,43 @@
                                 <font-awesome-icon :icon="['fas' , 'home']" /> Home
                             </inertia-link>
                         </li>
-                        <li class="md:inline-block border-b md:border-0">
-                            <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                        <li class="md:inline-block border-b md:border-0 ml-auto relative right-0">
+                            <a href="#" class="py-3 px-3 lg:px-4 block md:inline-block" @click="showAbout = !showAbout">
                                 <font-awesome-icon :icon="['fas' , 'info-circle']" /> 
                                 About IMOYES
                                 <font-awesome-icon :icon="['fas' , 'chevron-down']" class="ml-2" />
-                            </inertia-link>
+                            </a>
+                            <div v-if="showAbout" class="absolute z-10 shadow rounded dropdown top-0 left-0 right-auto bottom-auto w-44 bg-white text-left  transform -translate-x-1/2">
+                                <ul>
+                                    <li class="border-b border-gray-200">
+                                        <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                                            <font-awesome-icon :icon="['fas' , 'info-circle']" /> About Us
+                                        </inertia-link>
+                                    </li>
+                                    <li class="border-b border-gray-200">
+                                        <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                                            <font-awesome-icon :icon="['fas' , 'tasks']" /> Programmes
+                                        </inertia-link>
+                                    </li>
+                                    <li class="border-b border-gray-200">
+                                        <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                                            <font-awesome-icon :icon="['fas' , 'map-pin']" /> locations
+                                        </inertia-link>
+                                    </li>
+                                    <li class="">
+                                        <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                                            <font-awesome-icon :icon="['fas' , 'phone-alt']" /> Contact us
+                                        </inertia-link>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <!-- <li class="md:inline-block border-b md:border-0">
-                            <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
-                                <font-awesome-icon :icon="['fas' , 'info-circle']" /> About Us
-                            </inertia-link>
-                        </li> -->
+                        
                         <li class="md:inline-block border-b md:border-0">
                             <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
                                 <font-awesome-icon :icon="['fas' , 'university']" /> Innovation Park
                             </inertia-link>
                         </li>
-                        <!-- <li class="md:inline-block border-b md:border-0">
-                            <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
-                                <font-awesome-icon :icon="['fas' , 'tasks']" /> Programmes
-                            </inertia-link>
-                        </li> -->
                         <li class="md:inline-block border-b md:border-0">
                             <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
                                 <font-awesome-icon :icon="['fas' , 'tools']" /> Ventures
@@ -66,27 +81,27 @@
                                 <font-awesome-icon :icon="['far' , 'building']" /> Member firms
                             </inertia-link>
                         </li>
-                        <!-- <li class="md:inline-block border-b md:border-0">
-                            <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
-                                <font-awesome-icon :icon="['fas' , 'map-pin']" /> locations
-                            </inertia-link>
-                        </li> -->
-                        <!-- <li class="md:inline-block border-b md:border-0">
-                            <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
-                                <font-awesome-icon :icon="['fas' , 'phone-alt']" /> Contact us
-                            </inertia-link>
-                        </li> -->
-                        <li class="md:inline-block border-b md:border-0">
-                            <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                        <!--  -->
+                        <!--  -->
+                        <li class="md:inline-block border-b md:border-0 ml-auto relative right-0">
+                            <a href="#" class="py-3 px-3 lg:px-4 block md:inline-block" @click="showAccount = !showAccount">
                                 <font-awesome-icon :icon="['far' , 'user']" /> 
-                                Acount <font-awesome-icon :icon="['fas' , 'chevron-down']" class="ml-2" /> 
-                            </inertia-link>
-                            <div class="absolute z-10 bg-white px-3 py-2">
-                                Just own
+                                User Acount <font-awesome-icon :icon="['fas' , 'chevron-down']" class="ml-2" /> 
+                            </a>
+                            <div v-if="showAccount" class="absolute z-10 shadow rounded dropdown top-0 left-0 right-auto bottom-auto w-44 bg-white text-left">
+                                <ul>
+                                    <li class="border-b border-gray-200">
+                                        <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                                            <font-awesome-icon :icon="['fas' , 'sign-in-alt']" /> User Login
+                                        </inertia-link>
+                                    </li>
+                                    <li class="">
+                                        <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                                            <font-awesome-icon :icon="['fas' , 'user-plus']" /> Register
+                                        </inertia-link>
+                                    </li>
+                                </ul>
                             </div>
-                            <!-- <div class="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 sm:px-0 bg-gray-100">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, maxime hic suscipit, possimus eum ab eligendi aut nostrum eaque voluptatem commodi. Pariatur consectetur architecto ducimus perferendis sed nesciunt labore delectus.
-                            </div> -->
                         </li>
                     </ul>
                 </div>
@@ -105,6 +120,8 @@ export default {
             scroll_classes : 'fixed top-0 w-full z-10 bg-white bg-opacity-100 text-green-800 shadow-lg',
             scrolledDown: false,
             isSideOpen:false,
+            showAbout:false,
+            showAccount:false
         }
     },
     watch:{
@@ -145,6 +162,17 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .dropdown{
+        transform: translate3d(-2rem, 3rem, 2rem);
+        will-change: transform;
+        min-height: 10px;
+    }
+    .dropdown li:hover{
+        background-color: #e5f8ea;
+    }
+</style>
 
 <style>
     @media (max-width:767px) {
