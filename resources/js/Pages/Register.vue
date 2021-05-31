@@ -58,10 +58,6 @@
                 <div v-if="modal_type == 'success'">
                     <font-awesome-icon :icon="['far', 'check-circle']" class="text-4xl text-green-500" /> <br>
                     {{ modal_message }}
-                    <button type="submit" class="focus:outline-none text-white uppercase shadow-2xl my-3 w-full py-2 text-center rounded-lg cursor-pointer" style="background-color:#b91e1a;">
-                        <font-awesome-icon :icon="['fas', 'arrow-left']" class="mr-2" />  
-                        Back to Login
-                    </button>
                 </div>
                 <div v-else>
                     <font-awesome-icon :icon="['far', 'times-circle']" class="text-4xl text-red-500" /> <br>
@@ -128,6 +124,9 @@ export default {
                     this.modal_message = res.data.message;
                     this.modal_type = 'success';
                     this.showModal = true;
+                    setTimeout(() => {
+                        window.location.href = '/login';
+                    }, 1000);
                 }else{
                     this.modal_message = res.data.message;
                     this.modal_type = 'error';

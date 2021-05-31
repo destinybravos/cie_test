@@ -7,18 +7,20 @@
             <div class="h-full w-full bg-black bg-opacity-50 flex items-center">
                 <div class="py-12 max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     <div class="lg:col-span-2 text-left" data-aos="fade-in">
-                        <div class="">
-                            <img src="/imgs/imoyes.png" alt="" class="inline-block h-16 mx-5">
-                            <img src="/imgs/cielogo.png" alt="" class="inline-block h-16 mx-5">
+                        <div class="flex gap-x-3">
+                            <img src="/imgs/imoyes.png" alt="" class="inline-block h-16">
+                            <img src="/imgs/cielogo.png" alt="" class="inline-block h-16">
                         </div>
-                        <h2 class="font-black text-5xl my-2 uppercase"> {{ item.h2 }} </h2>
-                        <p class="font-semibold text-2xl mb-3">
+                        <h2 class="font-black text-3xl sm:text-5xl my-2 uppercase"> {{ item.h2 }} </h2>
+                        <p class="font-semibold mt-5 md:mt-3 sm:text-2xl mb-3">
                             {{ item.p }}
                         </p>
-                        <a href="#" class="bg-gradient-to-t from-red-700 to-red-500 px-8 py-2 rounded uppercase font-semibold">
-                            <font-awesome-icon :icon="['fas', 'sign-in-alt']" />  
-                            Join US
-                        </a>
+                        <div class="pt-5">
+                            <a href="/register" class="bg-gradient-to-t from-red-700 to-red-500 px-8 py-2 rounded  uppercase font-semibold">
+                                <font-awesome-icon :icon="['fas', 'sign-in-alt']" />  
+                                Join US
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
