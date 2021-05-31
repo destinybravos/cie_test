@@ -63,7 +63,7 @@
             <div class="px-6 py-10 max-w-6xl mx-auto text-white" data-aos="zoom-in">
                     <img src="/imgs/govlogo.png" alt=" " class="h-14 inline-block mx-2">
                     <img src="/imgs/imoyes.png" alt=" " class="h-14 inline-block mx-2">
-                    <img src="/imgs/cielogo.png" alt=" " class="h-14 inline-block mx-2">
+                    <img src="/imgs/cielogo.png" alt=" " class="h-14 inline-block mx-2"> 
             </div>
         </div>
 

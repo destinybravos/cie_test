@@ -15,7 +15,7 @@
 
         <div class="container mx-auto grid grid-cols-1 mt-8 md:grid-cols-2 lg:grid-cols-4">
             <!-- First Column -->
-            <div class="col-span-1 py-2 px-4 lg:col-span-1">
+            <div class="col-span-1 py-2 px-4 lg:col-span-1" data-aos="zoom-in-up">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <div>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <!-- Second Column -->
-            <div class="col-span-1 py-2 px-4">
+            <div class="col-span-1 py-2 px-4" data-aos="zoom-in-up">
                 <h3 class="font-bold mb-3 py-2 px-4 rounded-tr-lg rounded-bl-lg border bg-white bg-opacity-25 text-gray-100">
                     Featured Links
                 </h3>
@@ -94,7 +94,7 @@
                 </ul>
             </div>
             <!-- Third Column -->
-            <div class="col-span-1 py-2 px-4">
+            <div class="col-span-1 py-2 px-4" data-aos="zoom-in-up">
                 <h3 class="font-bold mb-3 py-2 px-4 rounded-tr-lg rounded-bl-lg border bg-green-600 bg-opacity-50 text-gray-100">
                     Quick Links
                 </h3>
@@ -146,7 +146,7 @@
             </div>         
 
             <!-- Fouth Column -->
-            <div class="col-span-1 py-2 px-4">
+            <div class="col-span-1 py-2 px-4" data-aos="zoom-in-up">
                 <h3 class="font-bold">
                     Latest News
                 </h3>
@@ -207,7 +207,7 @@
             </div>
         </div>
         <hr class="border-gray-400 mt-6">
-        <div class="text-center bg-gray-900 text-gray-300 p-4">
+        <div class="text-center bg-gray-900 text-gray-300 p-4" data-aos="zoom-in-up">
             Copyright &copy; Imo Youth Empowerment Scheme, {{ year.getFullYear() }}. All Rights Reserved
         </div>
     </div>
