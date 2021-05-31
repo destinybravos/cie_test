@@ -6,7 +6,7 @@
                 <div class="py-1">
                     <div class="text-center lg:mt-7 lg:text-right uppercase" data-aos="fade-up">
                         <div class="inline-flex gap-3 md:right-0 md:mt-5">
-                            <img src="/imgs/imoyes.png" alt="" class="h-12">
+                            <img src="/imgs/inoimo.jpg" alt="" class="h-12">
                             <!-- <img src="/imgs/cielogo.png" alt="" class="h-12"> -->
                         </div>
                         <h2 class="font-bold text-2xl text-white uppercase">

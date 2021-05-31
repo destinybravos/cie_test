@@ -5,7 +5,7 @@
 
         
         <div class="mb-8 md:mb-5 text-center">
-            <img src="/imgs/imoyes.png"  class="h-12 inline-block" alt="">
+            <img src="/imgs/inoimo.jpg"  class="h-12 inline-block" alt="">
             <img src="/imgs/cielogo.png" class="h-12 inline-block"  alt="">
         </div>
 

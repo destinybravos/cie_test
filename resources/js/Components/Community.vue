@@ -1,12 +1,12 @@
 <template>
     <div id="community-template" class="w-full bg-gray-100">
-        <div class="pb-12 pt-12 px-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="pb-12 pt-12 px-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <div data-aos="slide-up">
                 <h1 class="text-3xl text-green-800 font-bold">Our Community</h1>
                 <hr class="w-20 h-1 bg-green-800">
                 <div class="bg-white shadow w-full mt-5">
                     <div class="w-full h-full bg-green-800 flex">
-                        <img src="/imgs/community.jpg" alt="parcel" class="min-w-full">
+                        <img src="/imgs/training.jpg" alt=" " class="min-w-full">
                     </div>
                     <div class="py-3 px-6">
                         <p class="text-gray-700 text-base font-semibold my-3">
@@ -23,7 +23,7 @@
                 <hr class="w-20 h-1 bg-green-800">
                 <div class="bg-white shadow w-full mt-5">
                     <div class="w-full h-full bg-green-800 flex">
-                        <img src="/imgs/isip.jpg" alt="parcel" class="min-w-full">
+                        <img src="/imgs/robotics.jpg" alt=" " class="min-w-full">
                     </div>
                     <div class="py-3 px-6">
                         <p class="text-gray-700 text-base font-semibold my-3">

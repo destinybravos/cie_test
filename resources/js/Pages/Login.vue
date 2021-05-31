@@ -9,7 +9,7 @@
                     <form @submit.prevent="LoginUser" method="post">
                         <input type="hidden" name="_token" v-model="token">
                         <div class="flex gap-3 mb-8 md:mb-5 mt-5">
-                            <img src="/imgs/imoyes.png"  class="h-12" alt="">
+                            <img src="/imgs/inoimo.jpg"  class="h-12" alt="">
                             <img src="/imgs/cielogo.png" class="h-12"  alt="">
                         </div>
                         <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">

@@ -20,8 +20,8 @@
                 <div class="flex-shrink-0 flex items-center">
                     <div>
                         <inertia-link :href="route('home')">
-                            <img src="/imgs/govlogo.png" alt="" class="inline-block h-10 mx-2">
-                            <img src="/imgs/imoyes.png" alt="" class="inline-block h-10 mx-2">
+                            <img src="/imgs/govlogo.jpg" alt="" class="inline-block h-10 mx-2">
+                            <img src="/imgs/inoimo.jpg" alt="" class="inline-block h-10 mx-2">
                             <img src="/imgs/cielogo.png" alt="" class="inline-block h-10 mx-2">
                         </inertia-link>
                         <div class="text-sm">
@@ -207,7 +207,7 @@
             </div>
         </div>
         <hr class="border-gray-400 mt-6">
-        <div class="text-center bg-gray-900 text-gray-300 p-4" data-aos="zoom-in-up">
+        <div class="text-center bg-gray-900 text-gray-300 p-4">
             Copyright &copy; Imo Youth Empowerment Scheme, {{ year.getFullYear() }}. All Rights Reserved
         </div>
     </div>

@@ -3,7 +3,7 @@
         <div class="w-full">
             <!-- <div class="text-center text-white py-2 px-3 bg-green-600">
                 <img src="/imgs/govlogo.png" alt="" class="inline-block h-16 mx-2">
-                <img src="/imgs/imoyes.png" alt="" class="inline-block h-16 mx-2">
+                <img src="/imgs/inoimo.jpg" alt="" class="inline-block h-16 mx-2">
                 <img src="/imgs/cielogo.png" alt="" class="inline-block h-16 mx-2">
             </div> -->
             <page-header />
@@ -22,7 +22,7 @@
                                     Sharing prosperity through innovation training and entrepreneurship
                                 </p>
                                 <p class="py-5 block font-semibold">
-                                    <a :href="'/register'" class="inline-block py-2 px-5 hover:bg-blue-800 hover:text-white px-4 bg-white border border-blue-800 text-blue-800 rounded shadow">
+                                    <a :href="'/register'" class="inline-block py-2 px-5 hover:bg-blue-800 hover:text-white bg-white border border-blue-800 text-blue-800 rounded shadow">
                                         <font-awesome-icon :icon="['fas', 'user-plus']" /> Get Started
                                     </a>
                                 </p>
@@ -38,15 +38,15 @@
                                     <input type="hidden" name="_token" v-model="token">
                                     <div class="flex gap-3 mb-8 md:mb-5 mt-5 justify-center">
                                         <img src="/imgs/govlogo.png" alt="" class="h-12">
-                                        <img src="/imgs/imoyes.png"  class="h-12" alt="">
+                                        <img src="/imgs/inoimo.jpg"  class="h-12" alt="">
                                         <img src="/imgs/cielogo.png" class="h-12"  alt="">
                                     </div>
-                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
+                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg">
                                         <i class=""></i>
                                         <font-awesome-icon :icon="['far', 'user']" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
                                         <input v-model="email" type="text" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Email or Phone"> 
                                     </div>
-                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
+                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg">
                                         <font-awesome-icon @click="togglePass" :icon="['fas', eye]" v-if="!passVal" class="mt-3 ml-3 fa-1x fa cursor-pointer right-0 rounded-r-lg bg-white py-3 px-2 bottom-0 absolute text-gray-500" />
                                         <font-awesome-icon icon="lock" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
                                         <input v-model="pass" @keyUp="inputVal" :type="password" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Password"> 
@@ -73,22 +73,22 @@
                                 <form @submit.prevent="RegisterUser()">
                                     <div class="flex gap-3 mb-8 md:mb-5 justify-center">
                                         <img src="/imgs/govlogo.png" alt="" class="h-10">
-                                        <img src="/imgs/imoyes.png"  class="h-10" alt="">
+                                        <img src="/imgs/inoimo.jpg"  class="h-10" alt="">
                                         <img src="/imgs/cielogo.png" class="h-10"  alt="">
                                     </div>
-                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
+                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg">
                                         <font-awesome-icon :icon="['far', 'user']" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
                                         <input v-model="uname" required type="text" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Username">
                                     </div>
-                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
+                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg">
                                         <font-awesome-icon :icon="['far', 'envelope']" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
                                         <input v-model="email" required type="email" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Email Address"> 
                                     </div>
-                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
+                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg">
                                         <font-awesome-icon :icon="['fas', 'phone-alt']" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
                                         <input v-model="phone" required type="tel" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Phone"> 
                                     </div>
-                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
+                                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg">
                                         <font-awesome-icon @click="togglePass" :icon="['fas', eye]" v-if="!passVal" class="mt-3 ml-3 fa-1x fa cursor-pointer right-0 rounded-r-lg bg-white py-3 px-2 bottom-0 absolute text-gray-500" />
                                         <font-awesome-icon icon="lock" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
                                         <input v-model="pass" required @keyUp="inputVal" :type="password" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Password"> 
@@ -112,7 +112,21 @@
                                         Already have an account <a @click="actReg = !actReg" class="cursor-pointer" style="color: #b91e1a;">Login Now</a>
                                     </div>
                                 </form>
-                            </div>
+                            </div> 
+                            
+                            <!-- Modal -->
+                            <modal-component :propShow="showModal" :propSize="'sm'" @closeModal="closeModal">
+                                <div class="text-2xl text-center">
+                                    <div v-if="modal_type == 'success'">
+                                        <font-awesome-icon :icon="['far', 'check-circle']" class="text-4xl text-green-500" /> <br>
+                                        {{ modal_message }}
+                                    </div>
+                                    <div v-else>
+                                        <font-awesome-icon :icon="['far', 'times-circle']" class="text-4xl text-red-500" /> <br>
+                                        {{ modal_message }}
+                                    </div>
+                                </div>
+                            </modal-component>
                             <!-- Register -->
                         </div>
                     </div>
@@ -125,16 +139,25 @@
 <script>
 import HomeSlider from '../../Components/HomeSlider.vue'
 import PageHeader from './PageHeader.vue'
+import Http from "../../Mixins/HttpClient";
+import ModalComponent from '../Components/ModalComponent';
 export default {
-  components: { PageHeader, HomeSlider },
+  components: { PageHeader, HomeSlider, ModalComponent },
     data(){
         return {
             eye:'eye',
             password:'password',
             passVal:true,
             actReg:false,
+            showModal:false,
+            processing:false,
+            modal_type:'',
+            modal_message:'',
+            uname:'',
             pass:'',
+            phone:'',
             email:'',
+            agreed:false,
             errors:[],
             token: document.getElementsByName('csrf-token')[0].getAttribute('content'),
         }
@@ -161,7 +184,6 @@ export default {
             let user = {
                 email:this.email,
                 password: this.pass,
-                email: this.email,
                 _token: this.token
             }
             Http.client.post(route('login'), user)
@@ -185,6 +207,45 @@ export default {
                 this.processing = false;
             });
         },
+        RegisterUser(){
+            this.processing = true;
+            let user = {
+                username: this.uname,
+                password: this.pass,
+                phone: this.phone,
+                email: this.email,
+                password_confirmation:this.pass,
+                _token: this.token
+            }
+            Http.client.post('/register-user', user) 
+            .then((res) => {
+                if(res.data.status == 'success'){
+                    this.modal_message = res.data.message;
+                    this.modal_type = 'success';
+                    this.showModal = true;
+                    setTimeout(() => {
+                        window.location.href = '/login';
+                    }, 1000);
+                }else{
+                    this.modal_message = res.data.message;
+                    this.modal_type = 'error';
+                    this.showModal = true;
+                }
+                this.clearFields();
+                this.processing = false;
+            })
+            .catch((e) => {
+                this.modal_message = 'An Error! Occurred. Please check your input and try again';
+                this.modal_type = 'error';
+                this.showModal = true;
+                if (e.response) {
+                    console.log(e.response.data.message);
+                }else{
+                    console.log('Network error!');
+                }
+                this.processing = false;
+            });
+        },
         closeModal(){
             this.showModal = false
         },
@@ -192,6 +253,9 @@ export default {
             this.fname = '';
             this.pass = '';
             this.email = '';        
+        },
+        agree2terms(e){
+            this.agreed = e.target.checked;
         }
     }
 }

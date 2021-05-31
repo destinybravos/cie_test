@@ -1,6 +1,6 @@
 <template>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto px-4 py-3 rounded bg-white">
+    <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto px-4 py-3 rounded bg-white mt-8">
             <div>
                 <!-- Div image part -->
                 <div>
@@ -14,7 +14,9 @@
                     </div>
                 </div>
             </div>
-            <div></div>
+            <div>
+                dfdff
+            </div>
         </div>
     </div>
 </template>

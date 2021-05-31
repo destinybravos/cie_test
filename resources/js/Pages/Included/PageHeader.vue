@@ -8,7 +8,7 @@
         <div class="mx-auto max-w-6xl text-white grid grid-cols-1 md:grid-cols-5 text-sm py-2 px-3 md:px-2">
             <div class="col-span-2">
                 <img src="/imgs/govlogo.png" alt="" class="inline-block h-10 mx-2">
-                <img src="/imgs/imoyes.png" alt="" class="inline-block h-10 mx-2">
+                <img src="/imgs/inoimo.jpg" alt="" class="inline-block h-10 mx-2">
                 <img src="/imgs/cielogo.png" alt="" class="inline-block h-10 mx-2">
             </div>
             <div class="col-span-3 text-right hidden md:block">
@@ -28,15 +28,15 @@
                         <font-awesome-icon :icon="['fas' , 'bars']" />
                     </span>
                     <!-- <inertia-link :href="route('home')" class="inline-block py-2">
-                        <img v-if="scrolledDown" src="imgs/imoyes.png" alt="" class="h-10 max-h-full">
-                        <img v-else src="imgs/imoyes.png" alt="" class="h-10 max-h-full">
+                        <img v-if="scrolledDown" src="imgs/inoimo.jpg" alt="" class="h-10 max-h-full">
+                        <img v-else src="imgs/inoimo.jpg" alt="" class="h-10 max-h-full">
                     </inertia-link> -->
                 </div>
                 <div class="col-span-5 md:text-right hidden md:block transition-all duration-700 duration-150 ease-in-out" 
                   id="menu" :class="{'open': isSideOpen == true}">
                     <div class="md:hidden block text-center">
                         <!-- <inertia-link :href="route('home')" class="inline-block pt-1">
-                            <img src="imgs/imoyes.png" alt="" class="max-h-full">
+                            <img src="imgs/inoimo.jpg" alt="" class="max-h-full">
                         </inertia-link> -->
                     <hr>
                     </div>

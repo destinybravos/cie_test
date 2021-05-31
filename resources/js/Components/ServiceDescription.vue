@@ -4,12 +4,13 @@
             <h1 class="text-3xl text-green-600 font-bold">Featured Programms</h1>
             <hr class="w-20 h-1 bg-green-600">
         </div>
-        <div class="container max-w-6xl py-4 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-0">
-            <div class="bg-white my-2 rounded-lg shadow-lg">
+        <div class="container max-w-6xl lg:px-0 py-4 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-0">
+            <div class="bg-white mx-4 xl:mx-0 my-2 rounded-lg shadow-lg">
                 <div class="py-3">
                     <div class="py-4 text-center uppercase" data-aos="fade-up">
                         <div class="inline-flex gap-3 md:right-0 md:mt-5">
-                            <img src="/imgs/imoyes.png" alt="" class="h-12">
+                            <img src="/imgs/govlogo.jpg" alt="" class="h-12">
+                            <img src="/imgs/inoimo.jpg" alt="" class="h-12">
                             <img src="/imgs/cielogo.png" alt="" class="h-12">
                         </div>
                         <div class="px-6">

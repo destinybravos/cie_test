@@ -5,7 +5,7 @@
             <div class="max-w-7xl mx-auto flex">
                 <section class="py-2 px-3 md:px-1 flex-grow flex md:block">
                     <a href="#" class="hidden md:inline-block">
-                        <img src="/imgs/imoyes.png" alt="" class="h-8 inline-block align-middle">
+                        <img src="/imgs/inoimo.jpg" alt="" class="h-8 inline-block align-middle">
                         <img src="/imgs/cielogo.png" alt="" class="h-8 inline-block align-middle">
                     </a>
                     
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div id="main">
+        <div id="main" class="xl:mr-80 mx-auto max-w-5xl">
             <template v-if="verify_status > 0">
                 <slot name="side"></slot>
                 <div class="lg:max-w-7xl">

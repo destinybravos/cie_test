@@ -8,7 +8,7 @@
                 <div class="py-12 max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     <div class="lg:col-span-2 text-left" data-aos="fade-in">
                         <div class="flex gap-x-3">
-                            <img src="/imgs/imoyes.png" alt="" class="inline-block h-16">
+                            <img src="/imgs/inoimo.jpg" alt="" class="inline-block h-16">
                             <img src="/imgs/cielogo.png" alt="" class="inline-block h-16">
                         </div>
                         <h2 class="font-black text-3xl sm:text-5xl my-2 uppercase"> {{ item.h2 }} </h2>
