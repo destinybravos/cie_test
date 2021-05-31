@@ -6,29 +6,38 @@
             </div>
             <div class=" bg-white h-screen sm:h-auto md:rounded-r-lg sm:rounded-lg xl:rounded-l-sm">
                 <div class="mb-5 min-h-screen-lg px-4 py-8 rounded-none sm:rounded-lg flex flex-col justify-center items-center h-full w-full z-10 sm:h-auto">
-                    <div class="flex gap-3 mb-8 md:mb-5 mt-5">
-                        <img src="/imgs/imoyes.png"  class="h-12" alt="">
-                        <img src="/imgs/cielogo.png" class="h-12"  alt="">
-                    </div>
-                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
-                        <i class=""></i>
-                        <font-awesome-icon :icon="['far', 'user']" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
-                        <input type="text" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Email or Phone"> 
-                    </div>
-                    <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
-                        <font-awesome-icon @click="togglePass" :icon="['fas', eye]" v-if="!passVal" class="mt-3 ml-3 fa-1x fa cursor-pointer right-0 rounded-r-lg bg-white py-3 px-2 bottom-0 absolute text-gray-500" />
-                        <font-awesome-icon icon="lock" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
-                        <input v-model="input" @keyUp="inputVal" :type="password" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Password"> 
-                     </div>
-                    <button class="focus:outline-none text-white uppercase shadow-2xl my-3 w-full py-2 text-center rounded-lg cursor-pointer" style="background-color:#b91e1a;">
-                        login
-                    </button>
-                    <div class="text-left text-gray-500 text-sm">
-                        Don't have an account <a :href="route('register')" style="color: #b91e1a;">Register Now</a>
-                    </div>
-                    <!-- <div class="text-left text-gray-500 text-sm">
-                        Have forgotten your password <a href="retreive.html" style="color: #b91e1a;">Retreive Now</a>
-                    </div> -->
+                    <form @submit.prevent="LoginUser" method="post">
+                        <input type="hidden" name="_token" v-model="token">
+                        <div class="flex gap-3 mb-8 md:mb-5 mt-5">
+                            <img src="/imgs/imoyes.png"  class="h-12" alt="">
+                            <img src="/imgs/cielogo.png" class="h-12"  alt="">
+                        </div>
+                        <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
+                            <i class=""></i>
+                            <font-awesome-icon :icon="['far', 'user']" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
+                            <input v-model="email" type="text" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Email or Phone"> 
+                        </div>
+                        <div class="border-2 relative bg-white shadow-xl my-3 w-full flex flex-row  py-0 rounded-lg grid">
+                            <font-awesome-icon @click="togglePass" :icon="['fas', eye]" v-if="!passVal" class="mt-3 ml-3 fa-1x fa cursor-pointer right-0 rounded-r-lg bg-white py-3 px-2 bottom-0 absolute text-gray-500" />
+                            <font-awesome-icon icon="lock" class="mt-3 ml-3 fa-1x absolute text-gray-500" />
+                            <input v-model="pass" @keyUp="inputVal" :type="password" class="pr-3 focus:outline-none placeholder-gray-500 pl-8 rounded-lg w-full bg-gray-50 py-2" placeholder="Password"> 
+                        </div>
+                        <div v-if="errors.length > 0">
+                            <span class="text-sm" style="color: #b91e1a;">
+                                <i>{{ errors[0] }}</i>
+                            </span>
+                        </div>
+                        <button class="focus:outline-none text-white uppercase shadow-2xl my-3 w-full py-2 text-center rounded-lg cursor-pointer" style="background-color:#b91e1a;">
+                            <font-awesome-icon icon="sign-in-alt" class="mr-2" />
+                            login
+                        </button>
+                        <div class="text-left text-gray-500 text-sm">
+                            Don't have an account <a :href="route('register')" style="color: #b91e1a;">Register Now</a>
+                        </div>
+                        <!-- <div class="text-left text-gray-500 text-sm">
+                            Have forgotten your password <a href="retreive.html" style="color: #b91e1a;">Retreive Now</a>
+                        </div> -->
+                    </form>
                 </div>
             </div>
         </div>
@@ -46,12 +55,15 @@ export default {
             eye:'eye',
             password:'password',
             passVal:true,
-            input:''
+            pass:'',
+            email:'',
+            errors:[],
+            token: document.getElementsByName('csrf-token')[0].getAttribute('content'),
         }
     },
     methods:{
         inputVal :function(){
-            if(this.input != ''){
+            if(this.pass != ''){
                 this.passVal = false; 
             }else{
                 this.passVal = true;
@@ -66,34 +78,28 @@ export default {
                 this.eye='eye'
             }
         },
-        RegisterStudent(){
+        LoginUser(){
             this.processing = true;
-            let student = {
-                fullname: this.fname,
+            let user = {
+                email:this.email,
                 password: this.pass,
-                phone: this.phone,
                 email: this.email,
-                age: this.age,
+                _token: this.token
             }
-            Http.client.post('/register-student', student)
+            Http.client.post(route('login'), user)
             .then((res) => {
-                if(res.data.status == 'success'){
-                    this.modal_message = res.data.message;
-                    this.modal_type = 'success';
-                    this.showModal = true;
-                }else{
-                    this.modal_message = res.data.message;
-                    this.modal_type = 'error';
-                    this.showModal = true;
+                if(res.status == 200){
+                    window.location.href = '/dashboard';
                 }
-                this.clearFields();
                 this.processing = false;
             })
             .catch((e) => {
-                this.modal_message = 'An Error! Occurred. Please check your input and try again';
-                this.modal_type = 'error';
-                this.showModal = true;
                 if (e.response) {
+                    if (e.response.data.message == 'Your email address is not verified.') {
+                        window.location.href = '/dashboard';
+                    } else {
+                        this.errors.push('Invalid username or password!');
+                    }
                     console.log(e.response.data.message);
                 }else{
                     console.log('Network error!');
@@ -107,9 +113,8 @@ export default {
         clearFields(){
             this.fname = '';
             this.pass = '';
-            this.phone = '';
-            this.age = '';
-            this.email = '';        }
+            this.email = '';        
+        }
     }
 }
 </script>

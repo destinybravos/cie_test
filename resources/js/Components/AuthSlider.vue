@@ -9,10 +9,10 @@
                 <div class="absolute text-white px-3 py-4 w-full h-full sm:rounded-l-lg flex items-center" style="background-color: rgba(0, 0, 0, 0.6);">
                     <div class="">
                         <span class="border-b-2 pb-1 text-xl font-bold">
-                            WELCOME !
+                            WELCOME TO IMOYES!
                         </span>
                         <p class="pt-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero recusandae facere
+                            Imo State Youth Empowerment Scheme
                         </p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ export default {
         position: relative;
         box-sizing: border-box;
         width: 100%;
-        height: 400px;
+        height: 100%;
         max-height: 100%;
     }
     .hooper * {
