@@ -54,6 +54,23 @@
                     </inertia-link>
                 </div>
             </div>
+            <!-- Chatlist and group icon -->
+            <div class="flex center">
+                <div class="relative mx-auto flex gap-x-4">
+                    <div :class="toggle" class="absolute transition-all duration-900 p-4 px-8 rounded-full bg-red-100"></div>
+                    <div @click="friend" :class="color" class="z-10 py-1 px-6 mx-auto rounded-full cursor-pointer">
+                       <font-awesome-icon :icon="['far', 'comment-alt']"/> 
+                    </div>
+                    <div @click="group" :class="color2" class="z-10 p-1 mx-auto cursor-pointer">
+                        <font-awesome-icon :icon="['fas', 'users']"/> 
+                    </div>
+                </div>
+            </div>
+            <!-- Chatlist and group content -->
+            <div class="mt-2">
+                <chat-list v-if="openChatList"></chat-list>
+                <group-list v-else></group-list>
+            </div>
         </div>
 
         <div id="main" class="xl:mr-80 mx-auto max-w-5xl">
@@ -73,17 +90,38 @@
 </template>
 
 <script>
+import ChatList from '../Components/ChatList.vue';
+import GroupList from '../Components/GroupList.vue';
 import VerificationComponent from '../Components/VerificationComponent.vue';
 export default {
-  components: { VerificationComponent },
+  components: { VerificationComponent, ChatList, GroupList },
     data(){
         return {
-            verify_status:0
+            openChatList:true,
+            color:'text-red-500',
+            color2:'text-gray-400',
+            toggle:'',
+            verify_status:0,
+            openChatList:true
         }
     },
     beforeMount(){
         this.verify_status = this.$page.user.verification_status
         console.log(this.verify_status);
+    },
+    methods:{
+        friend(){
+            this.toggle=''
+            this.color='text-red-500'
+            this.color2='text-gray-400'
+            this.openChatList=true
+        },
+        group(){
+            this.toggle='left-16'
+            this.color='text-gray-400'
+            this.color2='text-red-500'
+            this.openChatList=false
+        },
     }
 }
 </script>
