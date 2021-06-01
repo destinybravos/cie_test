@@ -1,6 +1,13 @@
 <template>
     <div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione, mollitia? Inventore asperiores pariatur, voluptate quam nam quisquam earum placeat voluptates cum culpa saepe ratione dolor! Commodi accusantium iusto in ratione!
+        <div class="py-16 text-center">
+            <span class="p-4 bg-gray-400 text-white rounded-full">
+                <font-awesome-icon :icon="['fas', 'user-alt-slash']"/> 
+            </span>
+            <div class="text-gray-400 font-bold mt-6">
+                No users to show
+            </div>
+        </div>
     </div>
 </template>
 
