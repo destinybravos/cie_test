@@ -39,7 +39,7 @@
         </div>
 
         <!-- side chat bar -->
-        <div id="sidebar" class="z-10 shadow bg-white hidden lg:block fixed right-0 top-0 h-screen" style="width:250px;">
+        <div id="sidebar" class="z-10 shadow bg-white hidden xl:block fixed right-0 top-0 h-screen w-80">
             <div class="mt-12 flex px-6 py-2">
                 <h2 class="text-xl inline-block flex-grow">
                     Chats
@@ -57,29 +57,37 @@
         </div>
 
         <div id="main">
-            <slot name="side"></slot>
-            <div class="lg:max-w-7xl">
-                <slot></slot>
-            </div>
+            <template v-if="verify_status > 0">
+                <slot name="side"></slot>
+                <div class="lg:max-w-7xl">
+                    <slot></slot>
+                </div>
+            </template>
+            <template v-else>
+                <div class="lg:max-w-7xl">
+                    <verification-component></verification-component>
+                </div>
+            </template>
         </div>
     </div>
 </template>
 
 <script>
+import VerificationComponent from '../Components/VerificationComponent.vue';
 export default {
+  components: { VerificationComponent },
     data(){
         return {
-
+            verify_status:0
         }
     },
-    mounted(){
-        console.log(this.$page.user);
+    beforeMount(){
+        this.verify_status = this.$page.user.verification_status
+        console.log(this.verify_status);
     }
 }
 </script>
 
 <style scoped>
-    #main{
-        margin-right: 250px;
-    }
+    
 </style>

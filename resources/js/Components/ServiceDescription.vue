@@ -77,17 +77,47 @@
                 View more
             </a> 
         </div>
+
+        <!-- Slick Example -->
+        <!-- <div class="my-5">
+            <div class="autoplay">
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+            </div>
+        </div> -->
     </div>
 </template>
 
 <script>
 import BriefAbout from './BriefAbout.vue'
+import $ from 'jquery';
+import 'slick-carousel/slick/slick';
+
+$(document).ready(function(){
+    $('.autoplay').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 30000,
+    });
+});
+
 export default {
     components:{
         BriefAbout
     }
 }
 </script>
+
+<style>
+    .slick-prev, .slick-next{
+        display: none !important;
+    }
+</style>
 
 <style scoped>
     #serv_descr{
