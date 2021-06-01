@@ -38,4 +38,16 @@ class UserController extends Controller
         }
            
     }
+
+    public function fetch_friends(Request $request)
+    {
+        $user_id = $request->id;
+        // $users = User::where('id', '!=', $user_id)->get();
+        $users = User::all();
+
+        return response()->json([
+            'status' => 'success',
+            'users' => $users
+        ], 200);
+    }
 }

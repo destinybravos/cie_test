@@ -17,6 +17,8 @@ use App\Http\Controllers\UserController;
 
 Route::post('/register-user', [UserController::class, 'register']);
 
+Route::post('/user/fetch_friends', [UserController::class, 'fetch_friends']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
