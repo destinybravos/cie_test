@@ -79,7 +79,7 @@
         <div id="main" class="xl:mr-80 mx-auto max-w-5xl">
             <template v-if="verify_status > 0">
                 <slot name="side"></slot>
-                <div class="lg:max-w-7xl">
+                <div class="lg:max-w-7xl px-2 md:px-0">
                     <slot></slot>
                 </div>
             </template>
