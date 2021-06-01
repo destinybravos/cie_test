@@ -30,7 +30,7 @@ library.add(faUser,faPhoneAlt, faEnvelope, faUserAlt, faSortNumericUpAlt, faUser
     faUserGraduate,faUniversity, faSchool, faUsers, faBook, faGraduationCap, faSatelliteDish, faBriefcase,
     faTools,faPlus, faSignInAlt, faTasks, faBuilding, faChevronDown, faMoneyBill, faLock, faEye, faEyeSlash,
     faArrowLeft, faBullhorn,faStoreAlt,faSeedling, faPlusCircle, faCommentAlt, faBell, faCog, faUserFriends, faImages,
-    faCalendarAlt, faImage);
+    faCalendarAlt, faImage,faUsers);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;
