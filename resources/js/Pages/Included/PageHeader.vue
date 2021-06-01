@@ -38,7 +38,7 @@
                             <div v-if="showAbout" class="absolute z-10 shadow rounded dropdown top-0 left-0 right-auto bottom-auto w-44 bg-white text-left  transform -translate-x-1/2">
                                 <ul>
                                     <li class="border-b border-gray-200">
-                                        <inertia-link :href="route('home')" class="py-3 px-3 lg:px-4 block md:inline-block">
+                                        <inertia-link :href="route('about')" class="py-3 px-3 lg:px-4 block md:inline-block">
                                             <font-awesome-icon :icon="['fas' , 'info-circle']" /> About Us
                                         </inertia-link>
                                     </li>
