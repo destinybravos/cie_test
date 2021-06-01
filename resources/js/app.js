@@ -16,12 +16,12 @@ Vue.use(PortalVue);
 // Font awesome integration
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faBell, faBuilding, faCalendarAlt, faCheckCircle, faCommentAlt, faEnvelope, faImage, faImages, faTimesCircle, faUser} from '@fortawesome/free-regular-svg-icons';
+import { faBell, faBuilding, faCalendarAlt, faCheckCircle, faCommentAlt, faEnvelope, faImage, faImages, faSave, faTimesCircle, faUser} from '@fortawesome/free-regular-svg-icons';
 import { faBookReader, faChalkboardTeacher, faCircleNotch, faExternalLinkAlt, faInfoCircle, faKey, faLink, 
     faMapPin, faPhoneAlt, faSortNumericUpAlt, faTimes, faUserAlt, faUsersCog, faUserPlus, faHome, faBars, 
     faUserGraduate, faUniversity, faSchool, faUsers, faBook, faGraduationCap, faSatelliteDish, faBriefcase,
-     faTools, faPlus, faSignInAlt, faTasks, faChevronDown, faMoneyBill, faLock, faEye, faEyeSlash, faArrowLeft,
-      faBullhorn, faStoreAlt, faSeedling, faPlusCircle, faCog, faUserFriends } from '@fortawesome/free-solid-svg-icons';
+faTools, faPlus, faSignInAlt, faTasks, faChevronDown, faMoneyBill, faLock, faEye, faEyeSlash, faArrowLeft,
+      faBullhorn, faStoreAlt, faSeedling, faPlusCircle, faCog, faUserFriends, faCameraRetro, faSpinner, faArrowRight, faGlobeAfrica } from '@fortawesome/free-solid-svg-icons';
 import { faAccusoft, faFacebookF, faInstagram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 library.add(faUser,faPhoneAlt, faEnvelope, faUserAlt, faSortNumericUpAlt, faUserPlus, faKey, faTimesCircle, faCheckCircle, faTimes, 
@@ -30,7 +30,7 @@ library.add(faUser,faPhoneAlt, faEnvelope, faUserAlt, faSortNumericUpAlt, faUser
     faUserGraduate,faUniversity, faSchool, faUsers, faBook, faGraduationCap, faSatelliteDish, faBriefcase,
     faTools,faPlus, faSignInAlt, faTasks, faBuilding, faChevronDown, faMoneyBill, faLock, faEye, faEyeSlash,
     faArrowLeft, faBullhorn,faStoreAlt,faSeedling, faPlusCircle, faCommentAlt, faBell, faCog, faUserFriends, faImages,
-    faCalendarAlt, faImage);
+    faCalendarAlt, faImage, faCameraRetro, faSpinner, faArrowRight, faSave, faGlobeAfrica);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;

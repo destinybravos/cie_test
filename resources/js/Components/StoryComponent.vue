@@ -5,7 +5,7 @@
         </h2>
         <div class="my-3">
             <div class="story-img-div relative h-24 w-20">
-                <img class="h-full rounded object-cover inline-block align-top bg-blue-200" :src="'/imgs/' + $page.user.profile_photo_path" :alt="$page.user.name" />
+                <img class="h-full rounded object-cover inline-block align-top bg-blue-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
             </div>
         </div>
     </div>
