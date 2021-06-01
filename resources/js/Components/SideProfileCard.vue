@@ -6,8 +6,8 @@
         <div class="absolute w-full text-center mt-16">
             <img class="rounded-full h-16 shadow-lg mx-auto object-cover inline-block align-top bg-blue-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
         </div>
-        <p class="mx-auto mt-8 text-xl font-extrabold">destinyb</p>
-        <p class="mx-auto text-md font-extrabold">@destinyb</p>
+        <p class="mx-auto mt-8 text-lg font-extrabold text-gray-900">{{ `${$page.user.firstname} ${$page.user.lastname}` }}</p>
+        <p class="mx-auto text-sm font-semibold text-gray-700">@{{ $page.user.username }}</p>
         <div class="my-3 text-center grid grid-cols-3 divide-x divide-gray-300" style="font-size:10px">
             <div class="py-2">
                 <p>POST</p>
