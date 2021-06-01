@@ -70,6 +70,9 @@
             <div class="mt-2">
                 <chat-list v-if="openChatList"></chat-list>
                 <group-list v-else></group-list>
+                <div class="absolute bottom-0 p-3 w-full">
+                    <input type="text" placeholder="Search for users" class="placeholder:text-gray-300 rounded-md focus:outline-none py-1 px-2 w-full bg-gray-200 text-gray-500 border-0">
+                </div>
             </div>
         </div>
 
