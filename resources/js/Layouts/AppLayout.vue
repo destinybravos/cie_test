@@ -32,7 +32,7 @@
                         <font-awesome-icon :icon="['far', 'bell']" class="text-white text-xl inline-block mx-auto cursor-pointer" />
                     </inertia-link>
                     <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 ml-3 px-1 rounded py-1 align-middle">
-                        <img class="h-6 w-6 rounded-full object-cover inline-block align-top bg-white" :src="'/imgs/' + $page.user.profile_photo_path" :alt="$page.user.name" />
+                        <img class="h-6 w-6 rounded-full object-cover inline-block align-top bg-white" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
                     </inertia-link>
                 </section>
             </div>
