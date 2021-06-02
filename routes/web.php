@@ -30,6 +30,20 @@ Route::get('/login', function () {
 })->name('login');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Auth/Dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia\Inertia::render('Auth/Dashboard');
+    })->name('dashboard');
+
+    Route::get('/news-feeds', function () {
+        return Inertia\Inertia::render('Auth/Dashboard');
+    })->name('newsfeed');
+
+    Route::get('/profile', function () {
+        return Inertia\Inertia::render('Auth/Profile');
+    })->name('profile');
+    
+    Route::get('/apply-for-program', function () {
+        return Inertia\Inertia::render('Auth/ApplyProgram');
+    })->name('apply_program');
+});

@@ -9,7 +9,7 @@
                         <img src="/imgs/cielogo.png" alt="" class="h-8 inline-block align-middle">
                     </a>
                     
-                    <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 mx-1 px-1 rounded py-1 align-middle">
+                    <inertia-link :href="route('dashboard')" class="inline-block flex-grow cursor-pointer hover:bg-green-700 mx-1 px-1 rounded py-1 align-middle">
                         <font-awesome-icon icon="home" class="text-white text-xl ml-4 inline-block align-middle cursor-pointer" />
                     </inertia-link>
                     <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 mx-1 px-1 rounded py-1 align-middle">
@@ -31,9 +31,30 @@
                     <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 mx-1 px-1 rounded py-1 align-middle">
                         <font-awesome-icon :icon="['far', 'bell']" class="text-white text-xl inline-block mx-auto cursor-pointer" />
                     </inertia-link>
-                    <inertia-link href="#" class="inline-block flex-grow cursor-pointer hover:bg-green-700 ml-3 px-1 rounded py-1 align-middle">
-                        <img class="h-6 w-6 rounded-full object-cover inline-block align-top bg-white" :src="'/imgs/' + $page.user.profile_photo_path" :alt="$page.user.name" />
-                    </inertia-link>
+                    <span href="#" class="inline-block flex-grow relative cursor-pointer hover:bg-green-700 ml-3 px-1 rounded py-1 align-middle">
+                        <img @click="menu=true" class="h-6 w-6 rounded-full object-cover inline-block align-top bg-white" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
+                        <div v-if="menu" class="inline-flex w-auto flex-col">
+                            <div class="option-container absolute border overflow-hidden py-1 bg-white rounded-lg right-0 top-0 w-60 text-gray-800">
+                                <ul class="grid grid-cols-1 gap-0 divide-y" @click="menu=false" >
+                                    <li>
+                                        <inertia-link :href="route('profile')" class="flex px-3 py-2">
+                                            <span class="flex-grow font-semibold">
+                                                <font-awesome-icon :icon="['far', 'user']" class="" />
+                                                {{ $page.user.username }}
+                                            </span>
+                                            <img @click="menu=true" class="h-6 w-6 flex-initial rounded-full object-cover inline-block align-top bg-white" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
+                                        </inertia-link>
+                                    </li>
+                                    <li>
+                                        <inertia-link class="flex px-3 py-2">
+                                            <font-awesome-icon :icon="['far', 'user']" class="" />
+                                            Logout
+                                        </inertia-link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </span>
                 </section>
             </div>
         </div>
@@ -70,6 +91,9 @@
             <div class="mt-2">
                 <chat-list v-if="openChatList"></chat-list>
                 <group-list v-else></group-list>
+                <div class="absolute bottom-0 p-3 w-full">
+                    <input type="text" placeholder="Search for users" class="placeholder:text-gray-300 rounded-md focus:outline-none py-1 px-2 w-full bg-gray-200 text-gray-500 border-0">
+                </div>
             </div>
         </div>
 
@@ -102,7 +126,8 @@ export default {
             color2:'text-gray-400',
             toggle:'',
             verify_status:0,
-            openChatList:true
+            openChatList:true,
+            menu:false,
         }
     },
     beforeMount(){

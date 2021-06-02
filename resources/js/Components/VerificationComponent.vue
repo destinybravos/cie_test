@@ -84,7 +84,7 @@
                         <button type="button" @click="step--" v-if="step == 2" class="bg-gradient-to-b from-red-700 to-red-800 px-6 py-2 text-white font-semibold rounded-md">
                             <font-awesome-icon :icon="['fas', 'arrow-left']" class="" /> PREVIOUS
                         </button>
-                        <button type="submit" @click="step--" v-if="step >= 2" class="bg-gradient-to-b from-green-700 to-green-800 px-6 py-2 text-white font-semibold rounded-md">
+                        <button type="submit" v-if="step >= 2" class="bg-gradient-to-b from-green-700 to-green-800 px-6 py-2 text-white font-semibold rounded-md">
                             <font-awesome-icon :icon="['fas', 'circle-notch']" spin v-if="processing" class="" /> 
                             <font-awesome-icon :icon="['far', 'save']" class="" v-else /> 
                             Save Details
@@ -93,13 +93,29 @@
                 </div>
             </div>
         </form>
+        <modal-component :propShow="showModal" :propSize="'sm'" @closeModal="closeModal">
+            <div class="text-lg text-center">
+                <div v-if="modal_type == 'success'">
+                    <font-awesome-icon :icon="['far', 'check-circle']" class="text-2xl text-green-500" /> <br>
+                    {{ modal_message }}
+                </div>
+                <div v-else>
+                    <font-awesome-icon :icon="['far', 'times-circle']" class="text-2xl text-red-500" /> <br>
+                    {{ modal_message }}
+                </div>
+            </div>
+        </modal-component>
     </div>
 </template>
 
 <script>
 import $ from "jquery";
-import httpClient from '../Mixins/HttpClient';
+import Http from '../Mixins/HttpClient';
+import ModalComponent from '../Pages/Components/ModalComponent.vue';
 export default {
+    components:{
+        ModalComponent
+    },
     data(){
         return {
             uploading:false,
@@ -116,6 +132,10 @@ export default {
             country:'',
             step:1,
             processing:false,
+            userid: this.$page.user.id,
+            showModal:false,
+            modal_type:'',
+            modal_message:''
         }
     },
     methods:{
@@ -152,13 +172,21 @@ export default {
             formData.append('state', this.state);
             formData.append('address', this.address);
             formData.append('country', this.country);
+            formData.append('userid', this.userid);
 
             Http.client.post('/user/update_profile', formData) 
             .then((res) => {
                 if(res.data.status == 'success'){
-                    
+                    this.modal_message = res.data.message;
+                    this.modal_type = 'success';
+                    this.showModal = true;
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 100);
                 }else{
-                    
+                    this.modal_message = res.data.message;
+                    this.modal_type = 'error';
+                    this.showModal = true;
                 }
                 // this.clearFields();
                 this.processing = false;
@@ -171,7 +199,10 @@ export default {
                 }
                 this.processing = false;
             });
-        }
+        },
+        closeModal(){
+            this.showModal = false
+        },
     }
 }
 </script>
