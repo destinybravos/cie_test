@@ -19,7 +19,9 @@ Route::post('/register-user', [UserController::class, 'register']);
 
 Route::prefix('user')->group(function(){
     Route::post('/update_profile', [UserController::class, 'update']);
+    Route::post('/fetch_friends', [UserController::class, 'fetch_friends']);
 });
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
