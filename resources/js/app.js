@@ -21,7 +21,7 @@ import { faBookReader, faChalkboardTeacher, faCircleNotch, faExternalLinkAlt, fa
     faMapPin, faPhoneAlt, faSortNumericUpAlt, faTimes, faUserAlt, faUsersCog, faUserPlus, faHome, faBars, 
     faUserGraduate, faUniversity, faSchool, faUsers, faBook, faGraduationCap, faSatelliteDish, faBriefcase,
 faTools, faPlus, faSignInAlt, faTasks, faChevronDown, faMoneyBill, faLock, faEye, faEyeSlash, faArrowLeft,
-      faBullhorn, faStoreAlt, faSeedling, faPlusCircle, faCog, faUserFriends, faCameraRetro, faSpinner, faArrowRight, faGlobeAfrica, faUserAltSlash, faCamera } from '@fortawesome/free-solid-svg-icons';
+      faBullhorn, faStoreAlt, faSeedling, faPlusCircle, faCog, faUserFriends, faCameraRetro, faSpinner, faArrowRight, faGlobeAfrica, faUserAltSlash, faCamera, faThumbsUp, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faAccusoft, faFacebookF, faInstagram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 library.add(faUser,faPhoneAlt, faEnvelope, faUserAlt, faSortNumericUpAlt, faUserPlus, faKey, faTimesCircle, faCheckCircle, faTimes, 
@@ -30,7 +30,7 @@ library.add(faUser,faPhoneAlt, faEnvelope, faUserAlt, faSortNumericUpAlt, faUser
     faUserGraduate,faUniversity, faSchool, faUsers, faBook, faGraduationCap, faSatelliteDish, faBriefcase,
     faTools,faPlus, faSignInAlt, faTasks, faBuilding, faChevronDown, faMoneyBill, faLock, faEye, faEyeSlash,
     faArrowLeft, faBullhorn,faStoreAlt,faSeedling, faPlusCircle, faCommentAlt, faBell, faCog, faUserFriends, faImages,
-    faCalendarAlt, faImage,faUsers, faCameraRetro, faSpinner, faArrowRight, faGlobeAfrica, faSave, faUserAltSlash, faCamera, faNewspaper);
+    faCalendarAlt, faImage,faUsers, faCameraRetro, faSpinner, faArrowRight, faGlobeAfrica, faSave, faUserAltSlash, faCamera, faThumbsUp,faPencilAlt, faNewspaper);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;
