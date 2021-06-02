@@ -1,13 +1,13 @@
 <template>
     <div>
         <div v-if="show" @click="show=false" class="fixed transition-all duration-500 h-screen w-screen top-0 right-0 z-30" style="background:rgba(0,0,0,0.6)"></div>
-            <form>
+            <form @submit.prevent="sharePost()">
             <div class="bg-white relative mt-3 rounded-md shadow-lg">
                 <div @click="show=true" class="w-full z-50 relative">
                     <div class="bg-white rounded-t-md cursor-pointer px-3 py-2 relative">
                     <span class="w-full">
                             <img class="rounded-full h-8 shadow-lg inline-block align-top bg-purple-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
-                            <textarea name="" id="" class="overflow-y-hidden focus:outline-none mt-2 h-6 max-h-10 resize-none text-xs" style="width:80%" placeholder="What's going on? #Hashing.. @Mention.. link.."></textarea>
+                            <textarea v-model="post_content" id="" class="overflow-y-hidden focus:outline-none mt-2 h-6 max-h-10 resize-none text-xs" style="width:80%" placeholder="What's going on? #Hashing.. @Mention.. link.."></textarea>
                         </span>
                         <span class="px-2 pt-2 right-4 absolute">
                             <font-awesome-icon v-if="!show" :icon="['fas', 'camera']"/> 
@@ -73,22 +73,40 @@
 </template>
 
 <script>
+import Http from '../Mixins/HttpClient';
 export default {
     data(){
         return{
             show:false,
             toggleOption:'hidden',
             active:'Everyone',
-            view_option:'Everyone'
+            view_option:'Everyone',
+            post_content:'',
+            userid: this.$page.user.id
         }
     },methods:{
-        
+        sharePost(){
+            let data = {
+                content: this.post_content,
+                userid: this.userid,
+                viewstatus: this.active,
+                feedtype: 'post',
+            }
+
+            Http.client.post('/posts/sharefeed', data)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        }
     },
     watch:{
         'view_option' : function(val){
             this.active=val;
         }
-    }
+    },
 }
 </script>
 
