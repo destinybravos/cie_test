@@ -8,6 +8,7 @@
             <div class="mx-auto sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <!-- Feeds Colomns -->
                 <div class="md:col-span-2">
+                    <programs-alert />
                     <story-component />
                     <share-feed />
                     <feed-component />
@@ -29,6 +30,7 @@
     import NavList from '../../Components/NavList.vue'
     import ShareFeed from '../../Components/ShareFeed.vue'
     import FeedComponent from '../../Components/FeedComponent.vue'
+    import ProgramsAlert from '../../Components/ProgramsAlert.vue'
 
     export default {
         components: {
@@ -38,6 +40,7 @@
             NavList,
             ShareFeed,
             FeedComponent,
+            ProgramsAlert,
         },
         data(){
             return {
