@@ -32,7 +32,7 @@
                         <img v-else src="imgs/inoimo.jpg" alt="" class="h-10 max-h-full">
                     </inertia-link> -->
                 </div>
-                <div class="col-span-5 md:text-right hidden md:block transition-all duration-700 duration-150 ease-in-out" 
+                <div class="col-span-5 md:text-right hidden md:block transition-all duration-150 ease-in-out" 
                   id="menu" :class="{'open': isSideOpen == true}">
                     <div class="md:hidden block text-center">
                         <!-- <inertia-link :href="route('home')" class="inline-block pt-1">
