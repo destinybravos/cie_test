@@ -9,6 +9,22 @@
                 <!-- Cover Component -->
                 <div class="md:col-span-3">
                     <cover />
+
+                    <!-- Inner Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 md:gap-5 mt-12 px-3 md:px-0">
+                        <!-- Small Main -->
+                        <div class="col-span-2">
+                            <share-feed />
+                        </div>
+
+                        <!-- Right Side -->
+                        <div class="py-4">
+                            <!-- Other Component will come here -->
+                            <div class="h-36 rounded shadow bg-white mx-auto">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -21,6 +37,7 @@
     import SideProfileCard from '../../Components/SideProfileCard.vue'
     import NavList from '../../Components/NavList.vue'
     import Cover from '../../Components/Cover.vue'
+    import ShareFeed from '../../Components/ShareFeed.vue'
 
     export default {
         components: {
@@ -28,7 +45,8 @@
             StoryComponent,
             SideProfileCard,
             NavList, 
-            Cover         
+            Cover,
+            ShareFeed,        
         },
         data(){
             return {

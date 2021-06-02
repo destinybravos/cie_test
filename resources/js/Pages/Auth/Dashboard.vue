@@ -9,6 +9,8 @@
                 <!-- Feeds Colomns -->
                 <div class="md:col-span-2">
                     <story-component />
+                    <share-feed />
+                    <feed-component />
                 </div>
 
                 <!-- Side Columns -->
@@ -25,6 +27,8 @@
     import StoryComponent from '../../Components/StoryComponent.vue'
     import SideProfileCard from '../../Components/SideProfileCard.vue'
     import NavList from '../../Components/NavList.vue'
+    import ShareFeed from '../../Components/ShareFeed.vue'
+    import FeedComponent from '../../Components/FeedComponent.vue'
 
     export default {
         components: {
@@ -32,6 +36,8 @@
             StoryComponent,
             SideProfileCard,
             NavList,
+            ShareFeed,
+            FeedComponent,
         },
         data(){
             return {
