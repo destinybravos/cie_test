@@ -1,37 +1,87 @@
 <template>
     <div class="">
-        <div v-if="show" @click="show=false" class="absolute transition-all duration-500 h-screen w-screen top-0 right-0 z-30" style="background:rgba(0,0,0,0.6)"></div>
-        <div class="h-36 bg-white py-2 px-3 rounded-lg shadow">
-            <h2 class="font-bold">
-                Stories
-            </h2>
-            <div class="my-3">
-                <div class="story-img-div relative h-24 w-20">
-                    <img class="h-full rounded object-cover inline-block align-top bg-blue-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
+        <form action="">
+            <div v-if="show" @click="show=false" class="fixed transition-all duration-500 h-screen w-screen top-0 right-0 z-30" style="background:rgba(0,0,0,0.6)"></div>
+            <div class="h-36 bg-white py-2 px-3 rounded-lg shadow">
+                <h2 class="font-bold">
+                    Stories
+                </h2>
+                <div class="my-3">
+                    <div class="story-img-div relative h-24 w-20">
+                        <img class="h-full rounded object-cover inline-block align-top bg-blue-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="bg-white relative mt-3 rounded-md shadow-md">
-            <div @click="show=true" class="w-full z-50 relative">
-                <div class="bg-white shadow-md cursor-pointer px-3 py-2">
-                   <span class="w-full">
-                        <img class="rounded-full h-8 shadow-lg inline-block align-top px-1 pt-2 bg-purple-200" :src="'/imgs/' + $page.user.profile_photo_path" :alt="$page.user.name" />
-                        <span v-if="!show" class="text-xs text-gray-400 w-4/5">What's going on? #Hashing.. @Mention.. link..</span>
-                        <textarea v-if="show" name="" id="" class="overflow-y-hidden resize-none" style="width:80%" placeholder="What's going on? #Hashing.. @Mention.. link.."></textarea>
-                    </span>
-                    <span class="px-2 pt-2 right-4">
-                        <font-awesome-icon v-if="!show" :icon="['fas', 'camera']"/> 
-                        <font-awesome-icon :icon="['far', 'newspaper']"/> 
-                    </span>
-                </div>
-                <div v-if="show" class="bg-white shadow-md cursor-pointer px-3 py-2">
-                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio nulla quis repellat quaerat odio quam harum architecto, dolorem reprehenderit amet voluptatibus beatae qui molestias illum aspernatur facilis atque ullam reiciendis!
+            <div class="bg-white relative mt-3 rounded-md shadow-lg">
+                <div @click="show=true" class="w-full z-50 relative">
+                    <div class="bg-white rounded-t-md cursor-pointer px-3 py-2 relative">
+                    <span class="w-full">
+                            <img class="rounded-full h-8 shadow-lg inline-block align-top bg-purple-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
+                            <textarea name="" id="" class="overflow-y-hidden focus:outline-none mt-2 h-6 max-h-10 resize-none text-xs" style="width:80%" placeholder="What's going on? #Hashing.. @Mention.. link.."></textarea>
+                        </span>
+                        <span class="px-2 pt-2 right-4 absolute">
+                            <font-awesome-icon v-if="!show" :icon="['fas', 'camera']"/> 
+                            <font-awesome-icon :icon="['far', 'newspaper']"/> 
+                        </span>
+                    </div>
+                    <div v-if="show" class="bg-white shadow-md rounded-b-md cursor-pointer py-2">
+                        <div class="flex bg-white pl-6 py-4">
+                            <font-awesome-icon :icon="['far', 'image']" class="flex-grow text-md text-blue-400"/> 
+                            <font-awesome-icon :icon="['fas', 'video']" class="flex-grow text-md text-green-600"/> 
+                            <font-awesome-icon :icon="['fas', 'signature']" class="flex-grow text-md text-gray-400"/> 
+                            <font-awesome-icon :icon="['fas', 'microphone']" class="flex-grow text-md text-red-500"/> 
+                            <font-awesome-icon :icon="['fas', 'smile']" class="flex-grow text-md text-yellow-400"/> 
+                            <font-awesome-icon :icon="['fas', 'file']" class="flex-grow text-md text-blue-400"/> 
+                            <font-awesome-icon :icon="['fas', 'shopping-cart']" class="flex-grow text-md text-yellow-700"/> 
+                            <font-awesome-icon :icon="['fas', 'poll']" class="flex-grow text-md text-blue-600"/> 
+                            <font-awesome-icon :icon="['fas', 'map-marker-alt']" class="flex-grow text-md text-red-500"/> 
+                            <font-awesome-icon :icon="['fas', 'music']" class="flex-grow text-md text-blue-500"/> 
+                        </div>
+                        <div class=" border-t rounded-b-lg bg-white px-4 pt-3 ">
+                            <button type="submit" class="right-2 absolute px-6 py-1 text-sm rounded-sm bg-red-700 text-white">Share</button>
+                            <span class="text-xs">
+                                <div class="select-box inline-flex w-auto flex-col">
+                                    <div @click="toggleOption='block'" class="selected px-2 border border-gray-300 rounded-full py-1 bg-gray-200">
+                                        <font-awesome-icon :icon="['fas', 'globe-americas']"/>
+                                        {{active}}
+                                        <font-awesome-icon :icon="['fas', 'chevron-down']" class="ml-1"/>
+                                    </div>
+                                    <div @mouseleave="toggleOption='hidden'" :class="toggleOption" class="option-container absolute border bg-white text-gray-800">
+                                        <div  @click="toggleOption='hidden'" class="option px-4 py-2 hover:bg-red-800 hover:text-white">
+                                            <input value="Only me" type="radio" class="radio appearance-none" v-model="view_option" id="me" name="category">
+                                            <label for="me">Only me</label>
+                                        </div>
+                                        <div  @click="toggleOption='hidden'" class="option px-4 py-2 hover:bg-red-800 hover:text-white">
+                                            <input value="Everyone" type="radio" checked class="radio appearance-none" v-model="view_option" id="every" name="category">
+                                            <label for="every">Everyone</label>
+                                        </div>
+                                        <div  @click="toggleOption='hidden'" class="option px-4 py-2 hover:bg-red-800 hover:text-white">
+                                            <input value="People I Follow" type="radio" class="radio appearance-none" v-model="view_option" id="PIF" name="category">
+                                            <label for="PIF">People I Follow</label>
+                                        </div>
+                                        <div  @click="toggleOption='hidden'" class="option px-4 py-2 hover:bg-red-800 hover:text-white">
+                                            <input value="People Following Me" type="radio" class="radio appearance-none" v-model="view_option" id="PFM" name="category">
+                                            <label for="PFM">People Following Me</label>
+                                        </div>
+                                        <div  @click="toggleOption='hidden'" class="option px-4 py-2 hover:bg-red-800 hover:text-white">
+                                            <input value="Anonymous" type="radio" class="radio appearance-none" id="anon" v-model="view_option" name="category">
+                                            <label for="anon">Anonymous</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span> 
+                            
+                            <span class="text-xs text-gray-400 px-2">
+                                654
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-            <div class="py-3">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus inventore temporibus blanditiis rem at repellat magnam harum nesciunt unde placeat reiciendis dicta, ab reprehenderit maiores consectetur veritatis totam cum consequatur!
+            <div class="py-3 relative">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti eius placeat nemo, sit quis in blanditiis sunt tempore beatae facere corrupti a accusamus enim doloremque. Dignissimos a id ea labore.
             </div>
+        </form>
     </div>
 </template>
 
@@ -40,10 +90,16 @@ export default {
     data(){
         return{
             show:false,
+            toggleOption:'hidden',
+            active:'Everyone',
+            view_option:'Everyone'
         }
     },methods:{
-        something(){
-
+        
+    },
+    watch:{
+        'view_option' : function(val){
+            this.active=val;
         }
     }
 }
