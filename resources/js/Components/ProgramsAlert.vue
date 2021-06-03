@@ -30,7 +30,7 @@
                 </div>
                 <div class="py-2 px-3 font-bold text-xs">
                     Pitch to Hope
-                </div>
+                </div> 
             </div>
             <div class="bg-white shadow rounded">
                 <div class="overflow-hidden h-24 py-2 px-3">
