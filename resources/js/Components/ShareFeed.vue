@@ -1,23 +1,20 @@
 <template>
     <div>
         <div v-if="show" @click="show=false" class="fixed transition-all duration-500 h-screen w-screen top-0 right-0 z-30" style="background:rgba(0,0,0,0.6)"></div>
-            <form @submit.prevent="sharePost()">
-            <div class="bg-white relative mt-3 rounded-md shadow-lg">
+            <form>
+            <div class="bg-white relative mt-3 rounded-md">
                 <div @click="show=true" class="w-full z-50 relative">
-                    <div class="bg-white rounded-t-md cursor-pointer px-3 py-2 relative">
-                    <span class="w-full">
-                            <img class="rounded-full h-8 shadow-lg inline-block align-top bg-purple-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
-                            <textarea v-model="post_content" id="" class="overflow-y-hidden focus:outline-none mt-2 h-6 max-h-10 resize-none text-xs" style="width:80%" placeholder="What's going on? #Hashing.. @Mention.. link.."></textarea>
-                            <p class="typo__p text-green-600 text-sm" v-if="submitStatus === 'OK'">post shared!</p>
-                            <p class="typo__p text-red-600 text-sm" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
-                            <p class="typo__p text-blue-600 text-sm" v-if="submitStatus === 'PENDING'">sharing...</p>
+                    <div class="bg-white rounded-md cursor-pointer shadow-lg px-3 py-2 relative">
+                        <span class="w-full">
+                            <img class="rounded-full h-8 shadow-sm inline-block align-top bg-purple-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
+                            <textarea name="" id="" class="overflow-y-hidden focus:outline-none mt-2 h-6 max-h-10 resize-none text-xs" style="width:80%" placeholder="What's going on? #Hashing.. @Mention.. link.."></textarea>
                         </span>
                         <span class="px-2 pt-2 right-4 absolute">
                             <font-awesome-icon v-if="!show" :icon="['fas', 'camera']"/> 
                             <font-awesome-icon :icon="['far', 'newspaper']"/> 
                         </span>
                     </div>
-                    <div v-if="show" class="bg-white shadow-md rounded-b-md cursor-pointer py-2">
+                    <div v-if="show" class="bg-white shadow-md bottom-2 relative rounded-b-md cursor-pointer py-2">
                         <div class="flex bg-white pl-6 py-4">
                             <font-awesome-icon :icon="['far', 'image']" class="flex-grow text-md text-blue-400"/> 
                             <font-awesome-icon :icon="['fas', 'video']" class="flex-grow text-md text-green-600"/> 
