@@ -85,7 +85,7 @@ export default {
             userid: this.$page.user.id
         }
     },methods:{
-        sharePost(){
+        sharePost(actions){
             let data = {
                 content: this.post_content,
                 userid: this.userid,
@@ -96,6 +96,7 @@ export default {
             Http.client.post('/posts/sharefeed', data)
             .then((res) => {
                 console.log(res);
+                actions.resetForm()
             })
             .catch((error) => {
                 console.log(error);
