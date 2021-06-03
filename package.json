@@ -36,6 +36,7 @@
         "hooper": "^0.3.4",
         "jquery": "^3.6.0",
         "slick-carousel": "^1.8.1",
-        "vue2-touch-events": "^3.2.2"
+        "vue2-touch-events": "^3.2.2",
+        "vuelidate": "^0.7.6"
     }
 }
