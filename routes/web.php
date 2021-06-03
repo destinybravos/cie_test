@@ -35,7 +35,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return Inertia\Inertia::render('Auth/Dashboard');
     })->name('dashboard');
 
+    Route::get('/news-feeds', function () {
+        return Inertia\Inertia::render('Auth/Dashboard');
+    })->name('newsfeed');
+
     Route::get('/profile', function () {
         return Inertia\Inertia::render('Auth/Profile');
     })->name('profile');
+    
+    Route::get('/apply-for-program', function () {
+        return Inertia\Inertia::render('Auth/ApplyProgram');
+    })->name('apply_program');
 });
