@@ -73,22 +73,66 @@
 </template>
 
 <script>
+import Http from '../Mixins/HttpClient';
+import { required, minLength } from 'vuelidate/lib/validators'
 export default {
     data(){
         return{
             show:false,
             toggleOption:'hidden',
             active:'Everyone',
-            view_option:'Everyone'
+            view_option:'Everyone',
+            post_content:'',
+            userid: this.$page.user.id,
+             submitStatus: null
         }
-    },methods:{
-        
+    },
+    
+     validations:{
+    post_content:{
+    required,
+    minLength:minLength(5)
+}
+    },
+
+    methods:{
+        sharePost(actions){
+
+            this.$v.$touch()
+            if (this.$v.$invalid) {
+            this.submitStatus = 'ERROR'
+            }else{
+                this.submitStatus = 'PENDING'
+                  let data = {
+                content: this.post_content,
+                userid: this.userid,
+                viewstatus: this.active,
+                feedtype: 'post',
+            }
+
+            Http.client.post('/posts/sharefeed', data)
+            .then((res) => {
+                console.log(res.status);
+                // actions.resetForm()
+                res.status == 200 ?  this.submitStatus = 'OK' : res.errors;
+                this.post_content = '';
+                 this.show = false;
+                this.toggleOption = 'hidden';
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+
+
+            }
+          
+        }
     },
     watch:{
         'view_option' : function(val){
             this.active=val;
         }
-    }
+    },
 }
 </script>
 

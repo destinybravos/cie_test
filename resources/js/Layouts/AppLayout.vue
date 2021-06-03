@@ -97,7 +97,7 @@
             </div>
         </div>
 
-        <div id="main" class="xl:mr-80 mx-auto max-w-5xl">
+        <div id="main" class="xl:mr-80 mx-auto max-w-5xl ml-56">
             <template v-if="verify_status > 0">
                 <slot name="side"></slot>
                 <div class="lg:max-w-7xl">

@@ -21,7 +21,7 @@
         </div>
 
         <div class="mx-auto flex justify-center -mt-6">
-            <div class="absolute justify-center  flex bg-white  z-10" style="margin: 1px auto">
+            <div class="relative w-5/6 justify-center shadow flex bg-white  z-10" style="margin: 1px auto">
                 <div class="flex-grow text-center text-sm text-gray-800 cursor-pointer border-b-2 border-white hover:text-red-800 hover:border-b-2 hover:border-red-800">
                     <div class="lg:py-1 py-2 lg:px-2 px-3">
                         <span class="block">
