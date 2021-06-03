@@ -1,6 +1,6 @@
 <template>
-    <div class="mb-8">
-        <div class="flex w-full pt-3 pb-4 mb-3 px-4 bg-green-100 shadow">
+    <div class="mb-8 bg-green-100 shadow">
+        <div class="flex w-full pt-3 pb-4 px-4">
             <div class="flex-grow">
                 <font-awesome-icon :icon="['fas', 'tasks']" />
                 Available Programs
@@ -12,10 +12,42 @@
                 </inertia-link>
             </div>
         </div>
+        <hr>
 
         <!-- Programs Cards -->
-        <div>
-            
+        <div class="pt-3 pb-4 px-4 grid grid-cols-4 gap-4">
+            <div class="bg-white shadow rounded">
+                <div class="overflow-hidden h-24 py-2 px-3">
+                    <img src="/imgs/skillup.png" alt="Skill Up" class="max-w-full h-full">
+                </div>
+                <div class="py-2 px-3 font-bold text-xs">
+                    Skill Up Imo
+                </div>
+            </div>
+            <div class="bg-white shadow rounded">
+                <div class="overflow-hidden h-24 py-2 px-3">
+                    <img src="/imgs/pitch.png" alt="Skill Up" class="max-w-full h-full">
+                </div>
+                <div class="py-2 px-3 font-bold text-xs">
+                    Pitch to Hope
+                </div> 
+            </div>
+            <div class="bg-white shadow rounded">
+                <div class="overflow-hidden h-24 py-2 px-3">
+                    <img src="/imgs/demoday.png" alt="Skill Up" class="max-w-full h-full">
+                </div>
+                <div class="py-2 px-3 font-bold text-xs">
+                    Demo Day
+                </div>
+            </div>
+            <div class="bg-white shadow rounded">
+                <div class="overflow-hidden h-24 py-2 px-3">
+                    <img src="/imgs/startup.png" alt="Skill Up" class="max-w-full h-full">
+                </div>
+                <div class="py-2 px-3 font-bold text-xs">
+                    Startup Imo
+                </div>
+            </div>
         </div>
     </div>
 </template>

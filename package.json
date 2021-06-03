@@ -27,6 +27,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@dmuy/toast": "^2.0.2",
         "@fortawesome/fontawesome-svg-core": "^1.2.32",
         "@fortawesome/free-brands-svg-icons": "^5.15.1",
         "@fortawesome/free-regular-svg-icons": "^5.15.1",
@@ -36,6 +37,7 @@
         "hooper": "^0.3.4",
         "jquery": "^3.6.0",
         "slick-carousel": "^1.8.1",
-        "vue2-touch-events": "^3.2.2"
+        "vue2-touch-events": "^3.2.2",
+        "vuelidate": "^0.7.6"
     }
 }

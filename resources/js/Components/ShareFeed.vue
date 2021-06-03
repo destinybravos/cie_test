@@ -2,11 +2,11 @@
     <div>
         <div v-if="show" @click="show=false" class="fixed transition-all duration-500 h-screen w-screen top-0 right-0 z-30" style="background:rgba(0,0,0,0.6)"></div>
             <form>
-            <div class="bg-white relative mt-3 rounded-md shadow-lg">
+            <div class="bg-white relative mt-3 rounded-md">
                 <div @click="show=true" class="w-full z-50 relative">
-                    <div class="bg-white rounded-t-md cursor-pointer px-3 py-2 relative">
-                    <span class="w-full">
-                            <img class="rounded-full h-8 shadow-lg inline-block align-top bg-purple-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
+                    <div class="bg-white rounded-md cursor-pointer shadow-lg px-3 py-2 relative">
+                        <span class="w-full">
+                            <img class="rounded-full h-8 shadow-sm inline-block align-top bg-purple-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
                             <textarea name="" id="" class="overflow-y-hidden focus:outline-none mt-2 h-6 max-h-10 resize-none text-xs" style="width:80%" placeholder="What's going on? #Hashing.. @Mention.. link.."></textarea>
                         </span>
                         <span class="px-2 pt-2 right-4 absolute">
@@ -14,7 +14,7 @@
                             <font-awesome-icon :icon="['far', 'newspaper']"/> 
                         </span>
                     </div>
-                    <div v-if="show" class="bg-white shadow-md rounded-b-md cursor-pointer py-2">
+                    <div v-if="show" class="bg-white shadow-md bottom-2 relative rounded-b-md cursor-pointer py-2">
                         <div class="flex bg-white pl-6 py-4">
                             <font-awesome-icon :icon="['far', 'image']" class="flex-grow text-md text-blue-400"/> 
                             <font-awesome-icon :icon="['fas', 'video']" class="flex-grow text-md text-green-600"/> 
@@ -73,22 +73,80 @@
 </template>
 
 <script>
+import Http from '../Mixins/HttpClient';
+import { required, minLength } from 'vuelidate/lib/validators'
+import '@dmuy/toast/dist/mdtoast.css'
+import mdtoast from '@dmuy/toast'
 export default {
     data(){
         return{
             show:false,
             toggleOption:'hidden',
             active:'Everyone',
-            view_option:'Everyone'
+            view_option:'Everyone',
+            post_content:'',
+            userid: this.$page.user.id,
+             submitStatus: null
         }
-    },methods:{
-        
+    },
+    
+     validations:{
+    post_content:{
+    required,
+    minLength:minLength(5)
+}
+    },
+
+    methods:{
+        sharePost(actions){
+
+            this.$v.$touch()
+            if (this.$v.$invalid) {
+            this.submitStatus = 'ERROR'
+            }else{
+                this.submitStatus = 'PENDING'
+                  let data = {
+                content: this.post_content,
+                userid: this.userid,
+                viewstatus: this.active,
+                feedtype: 'post',
+            }
+
+            Http.client.post('/posts/sharefeed', data)
+            .then((res) => {
+                
+                if(res.data.status == 422){
+
+                     res.data.errors.content.map(function(error) {
+                    mdtoast(`${error}`, { duration: 10000, type: mdtoast.ERROR });
+                    
+                     })
+                        }
+
+                if(res.data.status == 200){
+                    this.submitStatus = 'OK';
+                  this.post_content = '';
+                  this.show = false;
+                 this.toggleOption = 'hidden';
+                 mdtoast(`post shared`, { duration: 10000, type: mdtoast.SUCCESS });
+                    
+                        }
+                
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+
+
+            }
+          
+        }
     },
     watch:{
         'view_option' : function(val){
             this.active=val;
         }
-    }
+    },
 }
 </script>
 
