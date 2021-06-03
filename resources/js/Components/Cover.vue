@@ -13,7 +13,7 @@
                             <font-awesome-icon :icon="['fas', 'pencil-alt']" class="mr-1" /> Edit
                         </button>
                         <button class="bg-red-300 opacity-75 px-3 lg:py-1 py-2">
-                             <font-awesome-icon :icon="['fas', 'tasks']" class="mr-1" /> Activities
+                            <font-awesome-icon :icon="['fas', 'tasks']" class="mr-1" /> Activities
                         </button>
                     </div>
                 </div>
