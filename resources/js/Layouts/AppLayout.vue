@@ -94,6 +94,48 @@
                 <div class="absolute bottom-0 p-3 w-full">
                     <input type="text" placeholder="Search for users" class="placeholder:text-gray-300 rounded-md focus:outline-none py-1 px-2 w-full bg-gray-200 text-gray-500 border-0">
                 </div>
+                <!-- bottom Message cards go in here -->
+                <div class="fixed flex gap-x-2 bottom-0 right-2 text-right p-3">
+                    <!-- small chat card section-->
+                    <div :class="popMessageBox" class="text-left relative rounded-lg w-64 h-80 bg-white shadow-lg border flex flex-col border-gray-300">
+                        <div class="px-1 py-1 relative flex gap-x-1 text-xs bg-green-100 rounded-t-lg">
+                            <img class="h-8 rounded-full object-cover inline-block align-top bg-white" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
+                            <span >
+                                <div class=" font-bold">Ebube </div>
+                                <div class="text-gray-400">Online</div>
+                            </span>
+                            <div class="absolute right-2 top-2">
+                                <font-awesome-icon @click="popMessageBox='hidden'" :icon="['fas', 'times']" class="cursor-pointer flex-grow text-md text-blue-400"/>
+                            </div>
+                        </div>
+                        <div class="text-xs px-1 py-1 overflow-y-scroll" style="flex:1 1 auto">
+                            <!-- message from me to friend -->
+                            <div class="mt-2 relative" style="align:right" align="right">
+                                <div class="table ml-1/6">
+                                    <p class="bg-gray-100 shadow-sm pl-4 pr-4 pt-2 pb-2 ml-1 mb-0" style="border-radius:9px 9px 0px 9px;">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, animi?
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- message to -->
+                            <div class="mt-2">
+                                <div style="display:flex;">
+                                    <p class="pl-4 bg-green-100 shadow-sm pr-4 pt-2 pb-2 ml-1 mb-0" style="border-radius:9px 9px 9px 0px;margin-right:30%">
+                                        <span class="">
+                                            locale_get_primary_language
+                                        </span>
+                                    </p>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="p-2 bg-green-100 rounded-b-lg flex gap-x-2">
+                            <textarea name="" id="" class="flex-grow resize-none h-8 rounded-lg focus:outline-none px-2 py-1 border border-gray-300"></textarea>
+                            <span class="pt-1 pr-1">
+                                <font-awesome-icon :icon="['far', 'paper-plane']" class="text-md text-blue-400"/>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -128,6 +170,7 @@ export default {
             verify_status:0,
             openChatList:true,
             menu:false,
+            popMessageBox:'hidden'
         }
     },
     beforeMount(){

@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div v-if="show" @click="show=false" class="fixed transition-all duration-500 h-screen w-screen top-0 right-0 z-30" style="background:rgba(0,0,0,0.6)"></div>
+        <div v-if="show" @click="show=false,zIndex=''" class="fixed transition-all duration-500 h-screen w-screen top-0 right-0 z-30" style="background:rgba(0,0,0,0.6)"></div>
             <form>
             <div class="bg-white relative mt-3 rounded-md">
-                <div @click="show=true" class="w-full z-50 relative">
+                <div @click="show=true,zIndex='z-50'" :class="zIndex" class="w-full relative">
                     <div class="bg-white rounded-md cursor-pointer shadow-lg px-3 py-2 relative">
                         <span class="w-full">
                             <img class="rounded-full h-8 shadow-sm inline-block align-top bg-purple-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.name" />
@@ -84,7 +84,8 @@ export default {
             view_option:'Everyone',
             post_content:'',
             userid: this.$page.user.id,
-             submitStatus: null
+            submitStatus: null,
+            zIndex:''
         }
     },
     
