@@ -21,7 +21,12 @@ class PostController extends Controller
 
         if ($validator->fails()) {
             //pass validator errors as errors object for ajax response
-        return response()->json(['errors'=>$validator->errors()],422);
+        // return response()->json(['errors'=>$validator->errors()],422);
+
+        return response()->json([
+            'status' => 422,
+            'errors'=>$validator->errors()
+        ], 200);
          }
 
         $newsfeed = new Newsfeed();
@@ -35,7 +40,8 @@ class PostController extends Controller
         $newsfeed->save();
 
         return response()->json([
-            'status' => 'success',
-        ], 200);
+            'status' => 200,
+            'success'=>'post shared'
+        ]);
     }
 }
