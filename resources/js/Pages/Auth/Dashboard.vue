@@ -11,7 +11,6 @@
                     <programs-alert />
                     <story-component />
                     <share-feed />
-                    <feed-component />
                 </div>
 
                 <!-- Side Columns -->
@@ -29,7 +28,6 @@
     import SideProfileCard from '../../Components/SideProfileCard.vue'
     import NavList from '../../Components/NavList.vue'
     import ShareFeed from '../../Components/ShareFeed.vue'
-    import FeedComponent from '../../Components/FeedComponent.vue'
     import ProgramsAlert from '../../Components/ProgramsAlert.vue'
 
     export default {
@@ -39,7 +37,6 @@
             SideProfileCard,
             NavList,
             ShareFeed,
-            FeedComponent,
             ProgramsAlert,
         },
         data(){

@@ -7,13 +7,13 @@
                     <img class="rounded-full lg:h-20 h-16 shadow-lg inline-block bg-blue-200" :src="`/storage/images/profiles/${$page.user.profile_photo_path}`" :alt="$page.user.username" />
                 </div>
                 <div class="col-span-2 ">
-                    <span class="my-auto pl-2 text-white text-2xl font-bold">{{ `${$page.user.firstname} ${$page.user.lastname}` }}</span>
-                    <div class="grid grid-cols-2 gap-2 text-white text-center font-bold">
-                        <button class="bg-gray-400 bg-opacity-75 ml-3 text-sm lg:px-2 px-3 lg:py-1 py-2">
-                            <font-awesome-icon :icon="['fas', 'pencil-alt']" class="mr-1" /> Edit
+                    <span class="my-auto pl-2 text-white text-lg sm:text-xl md:text-2xl font-bold">{{ `${$page.user.firstname} ${$page.user.lastname}` }}</span>
+                    <div class="grid grid-cols-2 gap-2 text-white text-center font-bold ml-3 text-sm">
+                        <button class="bg-gray-400 bg-opacity-75 px-2 py-1">
+                            <font-awesome-icon :icon="['fas', 'pencil-alt']" class="mr-1" /> <span class="hidden md:inline-block"> Edit</span>
                         </button>
-                        <button class="bg-gray-400 bg-opacity-75 px-3 lg:py-1 py-2">
-                             <font-awesome-icon :icon="['fas', 'tasks']" class="mr-1" /> Activities
+                        <button class="bg-gray-400 bg-opacity-75 px-2 py-1">
+                             <font-awesome-icon :icon="['fas', 'tasks']" class="mr-1" /> <span class="hidden md:inline-block"> Activities </span>
                         </button>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
         <div class="mx-auto flex justify-center -mt-6">
             <div class="relative w-5/6 justify-center shadow flex bg-white  z-10" style="margin: 1px auto">
                 <div class="flex-grow text-center text-sm text-gray-800 cursor-pointer border-b-2 border-white hover:text-red-800 hover:border-b-2 hover:border-red-800">
-                    <div class="lg:py-1 py-2 lg:px-2 px-3">
+                    <div class="lg:py-1 py-2 lg:px-2 px-3" @click="$emit('selectedTab','timeline')">
                         <span class="block">
                             <font-awesome-icon :icon="['fas', 'tasks']" class="" />
                         </span>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="flex-grow text-center text-sm text-gray-800 cursor-pointer border-b-2 border-white hover:text-red-800 hover:border-b-2 hover:border-red-800">
-                    <div class="lg:py-1 py-2 lg:px-2 px-3">
+                    <div class="lg:py-1 py-2 lg:px-2 px-3" @click="$emit('selectedTab','groups')">
                         <span class="block">
                             <font-awesome-icon :icon="['fas', 'users']" class="" />
                         </span>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="flex-grow text-center text-sm text-gray-800 cursor-pointer border-b-2 border-white hover:text-red-800 hover:border-b-2 hover:border-red-800">
-                    <div class="lg:py-1 py-2 lg:px-2 px-3">
+                    <div class="lg:py-1 py-2 lg:px-2 px-3" @click="$emit('selectedTab','likes')">
                         <span class="block">
                             <font-awesome-icon :icon="['fas', 'thumbs-up']" class="" />
                         </span>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="flex-grow text-center text-sm text-gray-800 cursor-pointer border-b-2 border-white hover:text-red-800 hover:border-b-2 hover:border-red-800">
-                    <div class="lg:py-1 py-2 lg:px-2 px-3">
+                    <div class="lg:py-1 py-2 lg:px-2 px-3" @click="$emit('selectedTab','following')">
                         <span class="block">
                             <font-awesome-icon :icon="['fas', 'user-plus']" class="" />
                         </span>
@@ -55,25 +55,25 @@
                     </div>
                 </div>
                 <div class="flex-grow text-center text-sm text-gray-800 cursor-pointer border-b-2 border-white hover:text-red-800 hover:border-b-2 hover:border-red-800">
-                    <div class="lg:py-1 py-2 lg:px-2 px-3">
+                    <div class="lg:py-1 py-2 lg:px-2 px-3" @click="$emit('selectedTab','followers')">
                         <span class="block">
-                            <font-awesome-icon :icon="['fas', 'users']" class="" />
+                            <font-awesome-icon :icon="['fas', 'user-friends']" class="" />
                         </span>
                         <span class="lg:block hidden">Followers</span>
                     </div>
                 </div>
                 <div class="flex-grow text-center text-sm text-gray-800 cursor-pointer border-b-2 border-white hover:text-red-800 hover:border-b-2 hover:border-red-800">
-                    <div class="lg:py-1 py-2 lg:px-2 px-3">
+                    <div class="lg:py-1 py-2 lg:px-2 px-3" @click="$emit('selectedTab','photos')">
                         <span class="block">
-                            <font-awesome-icon :icon="['fas', 'camera']" class="" />
+                            <font-awesome-icon :icon="['far', 'images']" class="" />
                         </span>
                         <span class="lg:block hidden">Photos</span>
                     </div>
                 </div>
                 <div class="flex-grow text-center text-sm text-gray-800 cursor-pointer border-b-2 border-white hover:text-red-800 hover:border-b-2 hover:border-red-800">
-                    <div class="lg:py-1 py-2 lg:px-2 px-3">
+                    <div class="lg:py-1 py-2 lg:px-2 px-3" @click="$emit('selectedTab','videos')">
                         <span class="block">
-                            <font-awesome-icon :icon="['far', 'images']" class="" />
+                            <font-awesome-icon :icon="['fas', 'video']" class="" />
                         </span>
                         <span class="lg:block hidden">Videos</span>
                     </div>
