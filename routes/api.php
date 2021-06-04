@@ -25,6 +25,7 @@ Route::prefix('user')->group(function(){
 
 Route::prefix('posts')->group(function(){
     Route::post('/sharefeed', [PostController::class, 'share']);
+    Route::post('/fetchfeeds', [PostController::class, 'fetchfeeds']);
 });
 
 

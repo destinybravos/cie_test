@@ -8,13 +8,19 @@
             <div class="mx-auto sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <!-- Cover Component -->
                 <div class="md:col-span-3">
-                    <cover />
+                    <cover @selectedTab="selectContent($event)" />
 
                     <!-- Inner Grid -->
                     <div class="grid grid-cols-1 md:grid-cols-3 md:gap-5 mt-12 px-3 md:px-0">
                         <!-- Small Main -->
                         <div class="col-span-2">
-                            <share-feed />
+                            <timeline v-if="selected == 'timeline'" />
+                            <groups v-if="selected == 'groups'" />
+                            <likes v-if="selected == 'likes'" />
+                            <following v-if="selected == 'following'" />
+                            <followers v-if="selected == 'followers'" />
+                            <photos v-if="selected == 'photos'" />
+                            <videos v-if="selected == 'videos'" />
                         </div>
 
                         <!-- Right Side -->
@@ -119,8 +125,14 @@
     import SideProfileCard from '../../Components/SideProfileCard.vue'
     import NavList from '../../Components/NavList.vue'
     import Cover from '../../Components/Cover.vue'
-    import ShareFeed from '../../Components/ShareFeed.vue'
-import Label from '../../Jetstream/Label.vue'
+    import Label from '../../Jetstream/Label.vue'
+    import Timeline from '../../Components/ProfileUtils/Timeline.vue'
+    import Groups from '../../Components/ProfileUtils/Groups.vue'
+import Likes from '../../Components/ProfileUtils/Likes.vue'
+import Following from '../../Components/ProfileUtils/Following.vue'
+import Followers from '../../Components/ProfileUtils/Followers.vue'
+import Photos from '../../Components/ProfileUtils/Photos.vue'
+import Videos from '../../Components/ProfileUtils/Videos.vue'
 
     export default {
         components: {
@@ -128,13 +140,25 @@ import Label from '../../Jetstream/Label.vue'
             StoryComponent,
             SideProfileCard,
             NavList, 
-            Cover,
-            ShareFeed,        
-                Label
+            Cover,       
+            Label,
+            Timeline,
+            Groups,
+            Likes,
+            Following,
+            Videos,
+            Photos,
+            Followers 
         },
-        data(){
+       data(){
             return {
-                showPrograms:false
+                selected:'timeline',
+                exp:''
+            }
+        },
+        methods:{
+            selectContent(content){
+                this.selected = content;
             }
         }
     }
